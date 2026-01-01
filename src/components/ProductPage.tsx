@@ -53,10 +53,10 @@ export function ProductPage() {
         {/* Page intro */}
         <div className="mb-8">
           <h1 className="text-2xl font-semibold text-stone-900 dark:text-stone-100 mb-2">
-            Product Definition
+            Определение продукта
           </h1>
           <p className="text-stone-600 dark:text-stone-400">
-            Define your product vision and break it into development sections.
+            Сформулируйте видение продукта и разбейте его на разделы разработки.
           </p>
         </div>
 

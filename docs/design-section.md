@@ -1,72 +1,72 @@
-# Designing Sections
+# Проектирование разделов
 
-After completing [Product Planning](product-planning.md), you're ready to design individual sections. Work through each section in your roadmap, completing these steps for each one.
+После [Планирования продукта](product-planning.md) можно переходить к проектированию отдельных разделов. Пройдите каждый раздел вашей дорожной карты, выполняя шаги ниже.
 
-## 1. Shape the Section
+## 1. Сформируйте раздел
 
 ```
 /shape-section
 ```
 
-Define what the section does. If you have multiple sections, you'll be asked which one to work on.
+Определите, что делает раздел. Если разделов несколько, вас спросят, с каким работать.
 
-This is a conversational process to establish:
+Это диалоговый процесс, в котором вы определите:
 
-- **Overview** — What this section is for (2-3 sentences)
-- **User flows** — The main actions and step-by-step interactions
-- **UI requirements** — Specific layouts, patterns, or components needed
-- **Scope boundaries** — What's intentionally excluded
+- **Обзор** — назначение раздела (2–3 предложения)
+- **Пользовательские сценарии** — основные действия и пошаговые взаимодействия
+- **Требования к интерфейсу** — нужные макеты, паттерны или компоненты
+- **Границы области** — что намеренно исключено
 
-Share any notes or ideas you have. The AI will ask clarifying questions about user actions, information to display, and UI patterns. Focus on experience and interface requirements—no backend or database details.
+Поделитесь заметками и идеями. AI задаст уточняющие вопросы о действиях пользователя, отображаемой информации и UI-паттернах. Сфокусируйтесь на опыте и требованиях к интерфейсу — без деталей бэкенда и базы данных.
 
-You'll also be asked whether this section should display inside the application shell (most sections do) or as a standalone page (for things like landing pages or embedded widgets).
+Вас также спросят, показывать ли раздел внутри оболочки приложения (обычно так) или как отдельную страницу (например, для лендингов или встраиваемых виджетов).
 
-**Creates:** `product/sections/[section-id]/spec.md`
+**Создает:** `product/sections/[section-id]/spec.md`
 
-## 2. Create Sample Data
+## 2. Создайте примерные данные
 
 ```
 /sample-data
 ```
 
-Generate realistic sample data based on the spec. This data populates your screen designs and makes them feel real.
+Сгенерируйте реалистичные данные по спецификации. Они заполнят ваши дизайны экранов и сделают их "живыми".
 
-The AI analyzes your section spec and proposes a data structure:
+AI анализирует спецификацию раздела и предлагает структуру данных:
 
-- **Entities** — Based on your global data model (if defined) or inferred from the spec
-- **Relationships** — How the data connects
-- **Sample records** — 5-10 realistic entries with varied content
+- **Сущности** — на основе глобальной модели данных (если задана) или выводятся из спецификации
+- **Связи** — как данные связаны между собой
+- **Примерные записи** — 5–10 реалистичных записей с разным содержанием
 
-You'll also get TypeScript types generated automatically:
+Также автоматически будут сгенерированы типы TypeScript:
 
-- **Data interfaces** — Type definitions for each entity
-- **Props interface** — What the component expects, including callbacks for actions (onView, onEdit, onDelete, etc.)
+- **Интерфейсы данных** — определения типов для каждой сущности
+- **Интерфейс props** — что ожидает компонент, включая коллбеки действий (onView, onEdit, onDelete и т.д.)
 
-The sample data includes:
-- Realistic names, dates, and descriptions (not "Lorem ipsum")
-- Varied content lengths and statuses
-- Edge cases (empty arrays, long text)
+Примерные данные включают:
+- реалистичные имена, даты и описания (не "Lorem ipsum")
+- разные длины контента и статусы
+- крайние случаи (пустые массивы, длинный текст)
 
-**Creates:**
+**Создает:**
 - `product/sections/[section-id]/data.json` — Sample data with `_meta` descriptions
 - `product/sections/[section-id]/types.ts` — TypeScript interfaces
 
-## 3. Design the Screen
+## 3. Спроектируйте экран
 
 ```
 /design-screen
 ```
 
-Build the actual React components for the section. This is where the spec and sample data become a working UI.
+Соберите реальные React-компоненты для раздела. Здесь спецификация и данные превращаются в рабочий UI.
 
-### What Gets Created
+### Что создается
 
-**Exportable components** (props-based, portable):
+**Экспортируемые компоненты** (на props, переносимые):
 
-The main component and any sub-components, all accepting data and callbacks via props. These are what get exported to your codebase.
+Главный компонент и подкомпоненты, принимающие данные и коллбеки через props. Именно они экспортируются в вашу кодовую базу.
 
 ```tsx
-// Example: Components accept props, never import data directly
+// Пример: компоненты принимают props и не импортируют данные напрямую
 export function InvoiceList({
   invoices,
   onView,
@@ -78,58 +78,58 @@ export function InvoiceList({
 }
 ```
 
-**Preview wrapper** (for Design OS only):
+**Preview-обертка** (только для Design OS):
 
-A wrapper that imports the sample data and feeds it to the component, so you can see it running in Design OS.
+Обертка, которая импортирует примерные данные и передает их компоненту, чтобы вы могли увидеть результат в Design OS.
 
-### Design Requirements
+### Требования к дизайну
 
-All screen designs include:
+Все дизайны экранов должны включать:
 
-- **Mobile responsive** — Tailwind responsive prefixes (`sm:`, `md:`, `lg:`)
-- **Light & dark mode** — Using `dark:` variants
-- **Design tokens applied** — Your color palette and typography choices
-- **All spec requirements** — Every user flow and UI requirement implemented
+- **Адаптивность** — префиксы Tailwind (`sm:`, `md:`, `lg:`)
+- **Светлая и темная темы** — использование `dark:` вариантов
+- **Примененные токены дизайна** — выбранные цвета и типографика
+- **Все требования спецификации** — реализованы все сценарии и требования UI
 
-### Multiple Views
+### Несколько представлений
 
-If the spec implies multiple views (list view, detail view, form, etc.), you'll be asked which to build first. Run `/design-screen` again for additional views.
+Если спецификация предполагает несколько представлений (список, детальная, форма и т.д.), вас спросят, какое делать первым. Для остальных запустите `/design-screen` еще раз.
 
-**Creates:**
+**Создает:**
 - `src/sections/[section-id]/components/[ViewName].tsx` — Main component
 - `src/sections/[section-id]/components/[SubComponent].tsx` — Sub-components as needed
 - `src/sections/[section-id]/components/index.ts` — Component exports
 - `src/sections/[section-id]/[ViewName].tsx` — Preview wrapper
 
-**Important:** Restart your dev server after creating screen designs to see the changes.
+**Важно:** перезапустите dev-сервер после создания дизайнов экранов, чтобы увидеть изменения.
 
-## 4. Capture Screenshots (Optional)
+## 4. Сделайте скриншоты (опционально)
 
 ```
 /screenshot-design
 ```
 
-Take screenshots of your screen designs for documentation. Screenshots are saved alongside the spec and data files.
+Сделайте скриншоты дизайнов экранов для документации. Скриншоты сохраняются рядом со спецификацией и данными.
 
-This command:
-1. Starts the dev server automatically
-2. Navigates to your screen design
-3. Hides the Design OS navigation bar
-4. Captures a full-page screenshot
+Команда:
+1. Автоматически запускает dev-сервер
+2. Переходит к вашему дизайну экрана
+3. Скрывает навигационную панель Design OS
+4. Делает скриншот всей страницы
 
-Screenshots are useful for:
-- Visual reference during implementation
-- Documentation and handoff materials
-- Comparing designs across sections
+Скриншоты полезны для:
+- визуальных референсов при реализации
+- документации и материалов передачи
+- сравнения дизайнов между разделами
 
-**Requires:** Playwright MCP server. If not installed, you'll be prompted with setup instructions.
+**Требуется:** сервер Playwright MCP. Если он не установлен, вы получите инструкции по настройке.
 
-**Creates:** `product/sections/[section-id]/[screen-name].png`
+**Создает:** `product/sections/[section-id]/[screen-name].png`
 
-## Repeat for Each Section
+## Повторите для каждого раздела
 
-Work through your roadmap sections in order. Each section builds on the foundation you established and benefits from the consistency of your global data model and design tokens.
+Проходите разделы дорожной карты по порядку. Каждый раздел опирается на основу, которую вы создали, и выигрывает от целостности глобальной модели данных и токенов дизайна.
 
-## What's Next
+## Что дальше
 
-When all sections are designed, you're ready to export. See [Export](export.md) for generating the complete handoff package.
+Когда все разделы готовы, можно экспортировать. См. [Экспорт](export.md) для создания полного пакета передачи.

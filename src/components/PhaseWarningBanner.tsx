@@ -11,7 +11,8 @@ function getStorageKey(productName: string): string {
   const sanitized = productName
     .toLowerCase()
     .replace(/\s+&\s+/g, '-and-') // Convert " & " to "-and-" first
-    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
+    .replace(/(^-|-$)/g, '')
   return `design-os-phase-warning-dismissed-${sanitized}`
 }
 
@@ -46,10 +47,10 @@ export function PhaseWarningBanner() {
   // Build the warning message
   const missingPhases: { name: string; path: string }[] = []
   if (!hasDataModel) {
-    missingPhases.push({ name: 'Data Model', path: '/data-model' })
+    missingPhases.push({ name: 'Модель данных', path: '/data-model' })
   }
   if (!hasDesign) {
-    missingPhases.push({ name: 'Design', path: '/design' })
+    missingPhases.push({ name: 'Дизайн', path: '/design' })
   }
 
   return (
@@ -58,10 +59,10 @@ export function PhaseWarningBanner() {
         <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 mt-0.5 shrink-0" strokeWidth={2} />
         <div className="flex-1 min-w-0">
           <p className="text-sm text-amber-800 dark:text-amber-200">
-            Consider completing{' '}
+            Рекомендуем завершить{' '}
             {missingPhases.map((phase, index) => (
               <span key={phase.path}>
-                {index > 0 && ' and '}
+                {index > 0 && ' и '}
                 <Link
                   to={phase.path}
                   className="font-medium underline hover:no-underline"
@@ -70,7 +71,7 @@ export function PhaseWarningBanner() {
                 </Link>
               </span>
             ))}{' '}
-            before designing sections.
+            перед проектированием разделов.
           </p>
         </div>
         <button

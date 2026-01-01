@@ -19,10 +19,10 @@ export function DataModelPage() {
         {/* Page intro */}
         <div className="mb-8">
           <h1 className="text-2xl font-semibold text-stone-900 dark:text-stone-100 mb-2">
-            Data Model
+            Модель данных
           </h1>
           <p className="text-stone-600 dark:text-stone-400">
-            Define the core entities and relationships in your product.
+            Определите ключевые сущности и связи в продукте.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export function DataModelPage() {
               <Card className="border-stone-200 dark:border-stone-700 shadow-sm">
                 <CardHeader>
                   <CardTitle className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-                    Entities
+                    Сущности
                     <span className="ml-2 text-sm font-normal text-stone-500 dark:text-stone-400">
                       ({dataModel.entities.length})
                     </span>
@@ -44,7 +44,7 @@ export function DataModelPage() {
                 </CardHeader>
                 <CardContent>
                   {dataModel.entities.length === 0 ? (
-                    <p className="text-stone-500 dark:text-stone-400">No entities defined.</p>
+                    <p className="text-stone-500 dark:text-stone-400">Сущности не заданы.</p>
                   ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {dataModel.entities.map((entity, index) => (
@@ -69,7 +69,7 @@ export function DataModelPage() {
               <Card className="border-stone-200 dark:border-stone-700 shadow-sm">
                 <CardHeader>
                   <CardTitle className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-                    Relationships
+                    Связи
                     <span className="ml-2 text-sm font-normal text-stone-500 dark:text-stone-400">
                       ({dataModel.relationships.length})
                     </span>
@@ -77,7 +77,7 @@ export function DataModelPage() {
                 </CardHeader>
                 <CardContent>
                   {dataModel.relationships.length === 0 ? (
-                    <p className="text-stone-500 dark:text-stone-400">No relationships defined.</p>
+                    <p className="text-stone-500 dark:text-stone-400">Связи не заданы.</p>
                   ) : (
                     <ul className="space-y-2">
                       {dataModel.relationships.map((relationship, index) => (
@@ -96,9 +96,9 @@ export function DataModelPage() {
               {/* Edit hint */}
               <div className="bg-stone-100 dark:bg-stone-800 rounded-md px-4 py-3">
                 <p className="text-sm text-stone-600 dark:text-stone-400">
-                  To update the data model, run{' '}
+                  Чтобы обновить модель данных, запустите{' '}
                   <code className="font-mono text-stone-800 dark:text-stone-200">/data-model</code>{' '}
-                  or edit the file directly at{' '}
+                  или отредактируйте файл напрямую здесь:{' '}
                   <code className="font-mono text-stone-800 dark:text-stone-200">
                     product/data-model/data-model.md
                   </code>

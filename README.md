@@ -1,54 +1,54 @@
 <img width="1280" height="640" alt="Design OS" src="https://github.com/user-attachments/assets/a9c04258-7b9a-45b6-8475-3431cdf5dbe9" />
 
-## The missing design process between your idea and your codebase.
+## Недостающий дизайн-процесс между вашей идеей и кодовой базой.
 
-[Design OS](https://buildermethods.com/design-os) is a product planning and design tool that helps you define your product vision, structure your data model, design your UI, and export production-ready components for implementation. Rather than jumping straight into code, you work through a guided process that captures what you're building and why—then hands off everything your coding agent needs to build it right.
+[Design OS](https://buildermethods.com/design-os) — инструмент для планирования и дизайна продукта: он помогает сформулировать видение, структурировать модель данных, спроектировать интерфейс и экспортировать компоненты, готовые к внедрению. Вместо того чтобы сразу переходить к коду, вы проходите через управляемый процесс, который фиксирует, что и зачем вы строите, — и передает вашему кодинг-агенту все необходимое для корректной реализации.
 
-## The Problem
+## Проблема
 
-AI coding tools are incredible at building fast. But the results often miss the mark. You describe what you want, the agent builds *something*, but it's not what you envisioned. The UI looks generic. Features get half-implemented. You spend as much time fixing and redirecting as you would have spent building.
+AI-инструменты для кодинга умеют быстро собирать решения. Но результат часто не попадает в ожидания. Вы описываете, что хотите, агент делает *что-то*, но это не то, что вы представляли. Интерфейс выглядит шаблонно. Функции реализованы наполовину. В итоге вы тратите столько же времени на исправления и корректировки, сколько потратили бы на разработку.
 
-**The core issue:** we're asking coding agents to figure out what to build *and* build it simultaneously. Design decisions get made on the fly, buried in code, impossible to adjust without starting over. There's no spec. No shared understanding. No source of truth for what "done" looks like.
+**Корневая проблема:** мы просим кодинг-агентов одновременно понять, что строить, *и* сразу это построить. Дизайн-решения принимаются на ходу, прячутся в коде, и их сложно менять без перезапуска процесса. Нет спецификации. Нет общего понимания. Нет источника истины о том, как выглядит "готово".
 
-## The Design OS Process
+## Процесс Design OS
 
-Design OS powers a guided design and architecture process. You + AI, working together through structured steps:
+Design OS задает управляемый процесс дизайна и архитектуры. Вы и AI вместе проходите последовательные шаги:
 
-1. **Product Planning** — Define your vision, break down your roadmap, and model your data
-2. **Design System** — Choose colors, typography, and design your application shell
-3. **Section Design** — For each feature area: specify requirements, generate sample data, and design the screens
-4. **Export** — Generate a complete handoff package for implementation
+1. **Планирование продукта** — сформулируйте видение, разбейте дорожную карту и опишите модель данных
+2. **Система дизайна** — выберите цвета и типографику, спроектируйте оболочку приложения
+3. **Проработка разделов** — для каждой функциональной области: требования, примерные данные и дизайны экранов
+4. **Экспорт** — сформируйте полный пакет передачи для реализации
 
-Each step is a conversation. The AI asks questions, you provide direction, and together you shape a product that matches your vision—before any implementation begins.
-
----
-
-## Documentation & Installation
-
-Docs, installation, usage, & best practices 👉 [It's all here](https://buildermethods.com/design-os)
+Каждый шаг — это диалог. AI задает вопросы, вы даете направление, и вместе вы формируете продукт, соответствующий вашему видению, — до начала реализации.
 
 ---
 
-## Support, Training & Community
+## Документация и установка
 
-For official support, training, and community as you use Design OS—for yourself or with your team, consider joining _Builder Methods Pro_. You'll get access to Brian Casel (the creator) for questions, a community of builders using Design OS, plus all Builder Methods workshops and training on AI-first development.
-
-👉 [Join Builder Methods Pro](https://buildermethods.com/pro)
+Документация, установка, использование и лучшие практики 👉 [Все здесь](https://buildermethods.com/design-os)
 
 ---
 
-## Follow updates & releases
+## Поддержка, обучение и сообщество
 
-Read the [changelog](CHANGELOG.md)
+Для официальной поддержки, обучения и сообщества при использовании Design OS — лично или с командой — рассмотрите _Builder Methods Pro_. Вы получите доступ к Брайану Кейселу (создателю) для вопросов, сообществу пользователей Design OS, а также ко всем воркшопам и обучению Builder Methods по AI-first разработке.
 
-[Subscribe to be notified of major new releases of Design OS](https://buildermethods.com/design-os)
+👉 [Присоединиться к Builder Methods Pro](https://buildermethods.com/pro)
 
 ---
 
-## Created by Brian Casel @ Builder Methods
+## Следите за обновлениями и релизами
 
-Created by Brian Casel, the creator of [Builder Methods](https://buildermethods.com), where Brian helps professional software developers and teams build with AI.
+Читайте [changelog](CHANGELOG.md)
 
-Get Brian's free resources on building with AI:
-- [Builder Briefing newsletter](https://buildermethods.com)
+[Подписаться на уведомления о крупных релизах Design OS](https://buildermethods.com/design-os)
+
+---
+
+## Создано Брайаном Кейселом @ Builder Methods
+
+Создано Брайаном Кейселом, основателем [Builder Methods](https://buildermethods.com), где он помогает профессиональным разработчикам и командам строить продукты с AI.
+
+Бесплатные ресурсы Брайана по разработке с AI:
+- [Рассылка Builder Briefing](https://buildermethods.com)
 - [YouTube](https://youtube.com/@briancasel)

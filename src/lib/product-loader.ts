@@ -29,7 +29,7 @@ function slugify(str: string): string {
   return str
     .toLowerCase()
     .replace(/\s+&\s+/g, '-and-') // Convert " & " to "-and-" first
-    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
     .replace(/(^-|-$)/g, '')
 }
 
@@ -57,18 +57,18 @@ export function parseProductOverview(md: string): ProductOverview | null {
   try {
     // Extract product name from first # heading
     const nameMatch = md.match(/^#\s+(.+)$/m)
-    const name = nameMatch?.[1]?.trim() || 'Product Overview'
+    const name = nameMatch?.[1]?.trim() || 'Обзор продукта'
 
     // Extract description - content between ## Description and next ##
-    const descMatch = md.match(/## Description\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const descMatch = md.match(/## (?:Description|Описание)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
     const description = descMatch?.[1]?.trim() || ''
 
     // Extract problems - ### Problem N: Title pattern
-    const problemsSection = md.match(/## Problems & Solutions\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const problemsSection = md.match(/## (?:Problems & Solutions|Проблемы и решения)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
     const problems: Problem[] = []
 
     if (problemsSection?.[1]) {
-      const problemMatches = [...problemsSection[1].matchAll(/### Problem \d+:\s*(.+)\n+([\s\S]*?)(?=\n### |\n## |$)/g)]
+      const problemMatches = [...problemsSection[1].matchAll(/### (?:Problem|Проблема) \d+:\s*(.+)\n+([\s\S]*?)(?=\n### |\n## |$)/g)]
       for (const match of problemMatches) {
         problems.push({
           title: match[1].trim(),
@@ -78,7 +78,7 @@ export function parseProductOverview(md: string): ProductOverview | null {
     }
 
     // Extract features - bullet list after ## Key Features
-    const featuresSection = md.match(/## Key Features\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const featuresSection = md.match(/## (?:Key Features|Ключевые возможности|Ключевые функции)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
     const features: string[] = []
 
     if (featuresSection?.[1]) {

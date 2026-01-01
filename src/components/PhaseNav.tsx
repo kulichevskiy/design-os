@@ -14,11 +14,11 @@ interface PhaseConfig {
 }
 
 const phases: PhaseConfig[] = [
-  { id: 'product', label: 'Product', icon: FileText, path: '/' },
-  { id: 'data-model', label: 'Data Model', icon: Boxes, path: '/data-model' },
-  { id: 'design', label: 'Design', icon: Layout, path: '/design' },
-  { id: 'sections', label: 'Sections', icon: LayoutList, path: '/sections' },
-  { id: 'export', label: 'Export', icon: Package, path: '/export' },
+  { id: 'product', label: 'Продукт', icon: FileText, path: '/' },
+  { id: 'data-model', label: 'Модель данных', icon: Boxes, path: '/data-model' },
+  { id: 'design', label: 'Дизайн', icon: Layout, path: '/design' },
+  { id: 'sections', label: 'Разделы', icon: LayoutList, path: '/sections' },
+  { id: 'export', label: 'Экспорт', icon: Package, path: '/export' },
 ]
 
 export type PhaseStatus = 'completed' | 'current' | 'upcoming'

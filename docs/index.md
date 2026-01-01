@@ -1,56 +1,56 @@
-# What is Design OS?
+# Что такое Design OS?
 
-Design OS is the missing step between your product idea and your codebase.
+Design OS — недостающий шаг между идеей продукта и кодовой базой.
 
-It's a product planning and design tool that helps you define your product vision, structure your data model, design your UI, and export production-ready components for implementation. Rather than jumping straight into code, you work through a guided process that captures what you're building and why—then hands off everything your coding agent needs to build it right.
+Это инструмент для планирования и дизайна продукта: он помогает сформулировать видение, структурировать модель данных, спроектировать интерфейс и экспортировать компоненты, готовые к внедрению. Вместо того чтобы сразу переходить к коду, вы проходите управляемый процесс, который фиксирует, что и зачем вы строите, — и передает вашему кодинг-агенту все необходимое для корректной реализации.
 
-## The Problem
+## Проблема
 
-AI coding tools are incredible at building fast. But the results often miss the mark. You describe what you want, the agent builds *something*, but it's not what you envisioned. The UI looks generic. Features get half-implemented. You spend as much time fixing and redirecting as you would have spent building.
+AI-инструменты для кодинга умеют быстро собирать решения. Но результат часто не попадает в ожидания. Вы описываете, что хотите, агент делает *что-то*, но это не то, что вы представляли. Интерфейс выглядит шаблонно. Функции реализованы наполовину. В итоге вы тратите столько же времени на исправления и корректировки, сколько потратили бы на разработку.
 
-The core issue: we're asking coding agents to figure out what to build *and* build it simultaneously. Design decisions get made on the fly, buried in code, impossible to adjust without starting over. There's no spec. No shared understanding. No source of truth for what "done" looks like.
+Корневая проблема: мы просим кодинг-агентов одновременно понять, что строить, *и* сразу это построить. Дизайн-решения принимаются на ходу, прячутся в коде, и их сложно менять без перезапуска процесса. Нет спецификации. Нет общего понимания. Нет источника истины о том, как выглядит "готово".
 
-## The Design OS Process
+## Процесс Design OS
 
-Design OS powers a guided design and architecture process. You + AI, working together through structured steps:
+Design OS задает управляемый процесс дизайна и архитектуры. Вы и AI вместе проходите последовательные шаги:
 
-1. **Product Planning** — Define your vision, break down your roadmap, and model your data
-2. **Design System** — Choose colors, typography, and design your application shell
-3. **Section Design** — For each feature area: specify requirements, generate sample data, and design the screens
-4. **Export** — Generate a complete handoff package for implementation
+1. **Планирование продукта** — сформулируйте видение, разбейте дорожную карту и опишите модель данных
+2. **Система дизайна** — выберите цвета и типографику, спроектируйте оболочку приложения
+3. **Проработка разделов** — для каждой функциональной области: требования, примерные данные и дизайны экранов
+4. **Экспорт** — сформируйте полный пакет передачи для реализации
 
-Each step is a conversation. The AI asks questions, you provide direction, and together you shape a product that matches your vision—before any implementation begins.
+Каждый шаг — это диалог. AI задает вопросы, вы даете направление, и вместе вы формируете продукт, соответствующий вашему видению, — до начала реализации.
 
-## How It Works
+## Как это работает
 
-Design OS is its own separate codebase—a design environment you use *before* building. When you're done, you export components and assets to import into your actual product's codebase.
+Design OS — отдельная кодовая база, дизайн-среда, которую вы используете *до* разработки. Когда вы закончите, вы экспортируете компоненты и материалы для импорта в реальную кодовую базу продукта.
 
-You interact with Design OS through slash commands. Each command walks you through a specific part of the process:
+Вы взаимодействуете с Design OS через слэш-команды. Каждая команда проводит вас через конкретный этап процесса:
 
-- `/product-vision` — Define what you're building and why
-- `/product-roadmap` — Break your product into buildable sections
-- `/data-model` — Define the core entities in your system
-- `/design-tokens` — Choose your color palette and typography
-- `/design-shell` — Design navigation and layout
-- `/shape-section` — Specify a section's scope and requirements
-- `/sample-data` — Generate realistic data for screen designs
-- `/design-screen` — Create production-ready React components
-- `/screenahot-design` — Snap a screenshot of a finished design screen for quick reference
-- `/export-product` — Generate the complete handoff package
+- `/product-vision` — Сформулировать, что вы строите и зачем
+- `/product-roadmap` — Разбить продукт на реализуемые разделы
+- `/data-model` — Определить ключевые сущности системы
+- `/design-tokens` — Выбрать палитру и типографику
+- `/design-shell` — Спроектировать навигацию и компоновку
+- `/shape-section` — Задать область и требования раздела
+- `/sample-data` — Сгенерировать реалистичные данные для дизайнов экранов
+- `/design-screen` — Создать готовые React-компоненты
+- `/screenshot-design` — Снять скриншот готового экрана для быстрого ориентира
+- `/export-product` — Сгенерировать полный пакет передачи
 
-See [Usage](usage.md) for the full workflow.
+Полный сценарий описан в разделе [Usage](usage.md).
 
-## Who It's For
+## Кому подходит
 
-- **Technical builders** — Full control over architecture and design decisions without doing all the legwork yourself.
-- **Non-technical product builders** — A strong vision for how your product should work, plus the ability to put your imprint on its systems—no technical background required.
+- **Техническим создателям** — полный контроль над архитектурой и дизайном без необходимости делать все вручную.
+- **Нетехническим продуктовым создателям** — ясное видение работы продукта и возможность влиять на системы без технического бэкграунда.
 
-## Compatibility
+## Совместимость
 
-- Works with any AI coding agent: Claude Code, Cursor, Copilot, or anything that can implement from a handoff
-- Your frontend needs React and Tailwind CSS
-- Your backend can be anything—Rails, Laravel, Next.js, Python, whatever
+- Работает с любым AI-агентом: Claude Code, Cursor, Copilot или любым, кто реализует по пакету передачи
+- Фронтенду нужны React и Tailwind CSS
+- Бэкенд может быть любым — Rails, Laravel, Next.js, Python и т.д.
 
-## Open Source
+## Открытый исходный код
 
-Design OS is free, open source, and runs locally.
+Design OS бесплатен, открыт и работает локально.

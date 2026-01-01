@@ -68,13 +68,13 @@ export function ShellDesignPage() {
             className="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 -ml-2"
           >
             <ArrowLeft className="w-4 h-4 mr-2" strokeWidth={1.5} />
-            Back
+            Назад
           </Button>
           <div className="h-4 w-px bg-stone-200 dark:bg-stone-700" />
           <div className="flex items-center gap-2">
             <PanelLeft className="w-4 h-4 text-stone-400" strokeWidth={1.5} />
             <span className="text-sm font-medium text-stone-700 dark:text-stone-300">
-              Shell Design
+              Дизайн оболочки
             </span>
           </div>
 
@@ -89,7 +89,7 @@ export function ShellDesignPage() {
                     ? 'bg-stone-200 dark:bg-stone-700 text-stone-900 dark:text-stone-100'
                     : 'text-stone-400 dark:text-stone-500 hover:text-stone-600 dark:hover:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800'
                 }`}
-                title="Mobile (30%)"
+                title="Мобильный (30%)"
               >
                 <Smartphone className="w-4 h-4" strokeWidth={1.5} />
               </button>
@@ -100,7 +100,7 @@ export function ShellDesignPage() {
                     ? 'bg-stone-200 dark:bg-stone-700 text-stone-900 dark:text-stone-100'
                     : 'text-stone-400 dark:text-stone-500 hover:text-stone-600 dark:hover:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800'
                 }`}
-                title="Tablet (60%)"
+                title="Планшет (60%)"
               >
                 <Tablet className="w-4 h-4" strokeWidth={1.5} />
               </button>
@@ -111,7 +111,7 @@ export function ShellDesignPage() {
                     ? 'bg-stone-200 dark:bg-stone-700 text-stone-900 dark:text-stone-100'
                     : 'text-stone-400 dark:text-stone-500 hover:text-stone-600 dark:hover:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800'
                 }`}
-                title="Desktop (100%)"
+                title="Десктоп (100%)"
               >
                 <Monitor className="w-4 h-4" strokeWidth={1.5} />
               </button>
@@ -127,7 +127,7 @@ export function ShellDesignPage() {
               className="flex items-center gap-1.5 text-xs text-stone-500 dark:text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors"
             >
               <Maximize2 className="w-3.5 h-3.5" strokeWidth={1.5} />
-              Fullscreen
+              На весь экран
             </a>
           </div>
         </div>
@@ -156,7 +156,7 @@ export function ShellDesignPage() {
           <iframe
             src="/shell/design/fullscreen"
             className="w-full h-full border-0"
-            title="Shell Preview"
+            title="Предпросмотр оболочки"
           />
         </div>
 
@@ -223,7 +223,7 @@ export function ShellDesignFullscreen() {
   if (!ShellPreviewComponent) {
     return (
       <div className="h-screen flex items-center justify-center bg-background">
-        <p className="text-stone-600 dark:text-stone-400">Shell preview not found.</p>
+        <p className="text-stone-600 dark:text-stone-400">Предпросмотр оболочки не найден.</p>
       </div>
     )
   }
@@ -232,7 +232,7 @@ export function ShellDesignFullscreen() {
     <Suspense
       fallback={
         <div className="h-screen flex items-center justify-center bg-background">
-          <div className="text-stone-500 dark:text-stone-400">Loading...</div>
+          <div className="text-stone-500 dark:text-stone-400">Загрузка...</div>
         </div>
       }
     >

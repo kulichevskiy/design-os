@@ -17,7 +17,7 @@ export function ShellCard({ shell }: ShellCardProps) {
       <CardHeader className="pb-4">
         <CardTitle className="text-lg font-semibold text-stone-900 dark:text-stone-100 flex items-center gap-2">
           <PanelLeft className="w-5 h-5 text-stone-500 dark:text-stone-400" strokeWidth={1.5} />
-          Application Shell
+          Оболочка приложения
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -33,7 +33,7 @@ export function ShellCard({ shell }: ShellCardProps) {
           <Collapsible open={navigationOpen} onOpenChange={setNavigationOpen}>
             <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left group">
               <span className="text-sm font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide">
-                Navigation
+                Навигация
                 <span className="ml-2 text-stone-400 dark:text-stone-500 normal-case tracking-normal">
                   ({shell.spec.navigationItems.length})
                 </span>
@@ -72,7 +72,7 @@ export function ShellCard({ shell }: ShellCardProps) {
                   <Layout className="w-4 h-4 text-stone-600 dark:text-stone-300" strokeWidth={1.5} />
                 </div>
                 <span className="font-medium text-stone-700 dark:text-stone-300 group-hover:text-stone-900 dark:group-hover:text-stone-100">
-                  View Shell Design
+                  Открыть дизайн оболочки
                 </span>
               </div>
               <ChevronRight className="w-4 h-4 text-stone-400 dark:text-stone-500" strokeWidth={1.5} />

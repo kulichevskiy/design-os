@@ -1,153 +1,153 @@
-# Codebase Implementation
+# Внедрение в кодовую базу
 
-After exporting your designs from Design OS, you have a complete handoff package ready for implementation. This guide covers how to work with your AI coding agent to build the product.
+После экспорта дизайнов из Design OS у вас есть полный пакет передачи, готовый к реализации. Это руководство объясняет, как работать с вашим AI-агентом и собрать продукт.
 
-## Getting Started
+## Начало работы
 
-1. Copy the `product-plan/` folder into your target codebase
-2. Start your AI coding agent (Claude Code, Cursor, etc.)
-3. Choose your implementation approach: one-shot or section-by-section
+1. Скопируйте папку `product-plan/` в целевую кодовую базу
+2. Запустите AI-агента (Claude Code, Cursor и т.д.)
+3. Выберите подход к реализации: за один проход или поэтапно
 
-## Implementation Approaches
+## Подходы к реализации
 
-### Option A: Incremental Implementation (Recommended)
+### Вариант A: поэтапная реализация (рекомендуется)
 
-For larger products or when you want to review progress incrementally.
+Подходит для крупных продуктов или когда важно контролировать прогресс.
 
-**How it works:**
+**Как это работает:**
 
-Work through the instructions in order:
+Идите по инструкциям по порядку:
 
-1. **Foundation** (`instructions/incremental/01-foundation.md`) — Design tokens, data model types, routing
-2. **Shell** (`instructions/incremental/02-shell.md`) — Application shell and navigation
-3. **Sections** (`instructions/incremental/03-*.md`, `04-*.md`, etc.) — Each feature section, one at a time
+1. **Foundation** (`instructions/incremental/01-foundation.md`) — дизайн-токены, типы модели данных, маршрутизация
+2. **Shell** (`instructions/incremental/02-shell.md`) — оболочка приложения и навигация
+3. **Sections** (`instructions/incremental/03-*.md`, `04-*.md` и т.д.) — каждый раздел по очереди
 
-For each milestone:
+Для каждого этапа:
 
-1. Open `product-plan/prompts/section-prompt.md`
-2. Fill in the section variables at the top (SECTION_NAME, SECTION_ID, NN)
-3. Add any section-specific notes
-4. Copy/paste the prompt into your coding agent
-5. Answer clarifying questions and let the agent implement
-6. Review and test before moving to the next milestone
+1. Откройте `product-plan/prompts/section-prompt.md`
+2. Заполните переменные вверху (SECTION_NAME, SECTION_ID, NN)
+3. Добавьте заметки по конкретному разделу
+4. Скопируйте и вставьте промпт в вашего агента
+5. Ответьте на уточняющие вопросы и дайте агенту реализовать
+6. Проверьте и протестируйте перед следующим этапом
 
-**The section prompt:**
+**Промпт раздела:**
 
-- References the section's instruction file and assets
-- Points to `tests.md` for test-driven development
-- Asks about auth, data relationships, and integration points
+- Ссылается на инструкции и материалы раздела
+- Указывает на `tests.md` для тестовой разработки
+- Спрашивает про авторизацию, связи данных и точки интеграции
 
-### Option B: One-Shot Implementation
+### Вариант B: реализация за один проход
 
-For simpler products or when you want to build everything in one session.
+Подходит для простых продуктов или когда хотите сделать все за один сеанс.
 
-**How it works:**
+**Как это работает:**
 
-1. Open `product-plan/prompts/one-shot-prompt.md`
-2. Add any additional notes (tech stack preferences, constraints)
-3. Copy/paste the prompt into your coding agent
-4. Answer the agent's clarifying questions about auth, user modeling, etc.
-5. Let the agent plan and implement everything
+1. Откройте `product-plan/prompts/one-shot-prompt.md`
+2. Добавьте дополнительные заметки (предпочтения по техстеку, ограничения)
+3. Скопируйте и вставьте промпт в вашего агента
+4. Ответьте на уточняющие вопросы агента об авторизации, модели пользователей и т.д.
+5. Дайте агенту спланировать и реализовать все целиком
 
-The prompt references `product-overview.md` and `instructions/one-shot-instructions.md`, and guides your agent to ask important questions before starting.
+Промпт ссылается на `product-overview.md` и `instructions/one-shot-instructions.md` и направляет агента задать важные вопросы до старта.
 
-**The prompt includes questions about:**
+**В промпте есть вопросы про:**
 
-- Authentication & authorization (login methods, user roles)
-- User & account modeling (single-user vs multi-user, teams/workspaces)
-- Tech stack preferences (backend framework, database)
-- Any other clarifications needed
+- Аутентификацию и авторизацию (методы входа, роли)
+- Моделирование пользователей и аккаунтов (одиночные vs командные, workspace)
+- Предпочтения по техстеку (бэкенд-фреймворк, база данных)
+- Другие необходимые уточнения
 
-## Test-Driven Development
+## Разработка через тесты (TDD)
 
-Each section includes a `tests.md` file with detailed test-writing instructions. We recommend a TDD approach:
+Каждый раздел включает файл `tests.md` с подробными инструкциями по тестам. Мы рекомендуем TDD-подход:
 
-1. **Read the test instructions** — Review `sections/[section-id]/tests.md`
-2. **Write failing tests** — Based on the user flows and assertions described
-3. **Implement the feature** — Make the tests pass
-4. **Refactor** — Clean up while keeping tests green
+1. **Прочитайте инструкции** — изучите `sections/[section-id]/tests.md`
+2. **Напишите падающие тесты** — по описанным сценариям и проверкам
+3. **Реализуйте функцию** — добейтесь прохождения тестов
+4. **Сделайте рефакторинг** — очистите код, сохранив зеленые тесты
 
-The test instructions include:
+Инструкции по тестам включают:
 
-- **User flow tests** — Success and failure paths for key interactions
-- **Empty state tests** — Verifying behavior when no records exist
-- **Component interaction tests** — Specific UI elements and behaviors
-- **Edge cases** — Boundary conditions and transitions
+- **Тесты пользовательских сценариев** — успешные и неуспешные пути
+- **Тесты пустых состояний** — поведение при отсутствии записей
+- **Тесты взаимодействия компонентов** — конкретные элементы и поведения
+- **Крайние случаи** — граничные условия и переходы
 
-Test instructions are **framework-agnostic**—they describe WHAT to test, not HOW. Adapt them to your testing setup (Jest, Vitest, Playwright, Cypress, RSpec, Minitest, PHPUnit, etc.).
+Инструкции по тестам **независимы от фреймворка** — они описывают ЧТО тестировать, а не КАК. Адаптируйте под ваш стек (Jest, Vitest, Playwright, Cypress, RSpec, Minitest, PHPUnit и т.д.).
 
-## Spec-Driven Development
+## Разработка по спецификации
 
-We also recommend a spec-driven approach:
+Также рекомендуем подход, основанный на спецификации:
 
-1. **Review the design** — Understand what's been designed and why
-2. **Ask clarifying questions** — Resolve any ambiguities before coding
-3. **Write the technical spec** — Define the backend architecture, API contracts, database schema
-4. **Write tests first** — Based on the provided test instructions
-5. **Implement** — Build to make tests pass
-6. **Verify** — Ensure the implementation matches the design
+1. **Изучите дизайн** — поймите, что и почему спроектировано
+2. **Задайте уточняющие вопросы** — устраните двусмысленности перед кодом
+3. **Составьте техническую спецификацию** — архитектура бэкенда, контракты API, схема БД
+4. **Сначала напишите тесты** — по предоставленным инструкциям
+5. **Реализуйте** — так, чтобы тесты проходили
+6. **Проверьте** — соответствие реализации дизайну
 
-This approach prevents wasted work from misunderstandings and ensures the backend properly supports the frontend designs.
+Такой подход снижает риск потери времени из-за недопониманий и обеспечивает поддержку дизайнов на бэкенде.
 
-## Clarifying Questions
+## Уточняющие вопросы
 
-Before finalizing any implementation plan, encourage your agent to ask questions like:
+Перед финализацией плана реализации предложите агенту задавать вопросы вроде:
 
-**Architecture:**
-- What backend framework are we using?
-- How should authentication work?
-- Are there existing patterns in this codebase to follow?
+**Архитектура:**
+- Какой бэкенд-фреймворк используем?
+- Как должна работать авторизация?
+- Есть ли в этой кодовой базе принятые паттерны?
 
-**Data:**
-- How should the data model extend what's defined?
-- Are there validation rules beyond what the UI shows?
-- How should relationships be handled (eager loading, lazy loading)?
+**Данные:**
+- Как расширять модель данных относительно описанной?
+- Есть ли правила валидации сверх того, что видно в UI?
+- Как обрабатывать связи (жадная/ленивая загрузка)?
 
-**Integration:**
-- How should the callbacks be implemented (API calls, local state)?
-- What error handling patterns should we use?
-- Are there existing UI components to reuse alongside the new ones?
+**Интеграция:**
+- Как реализовать коллбеки (API-вызовы, локальное состояние)?
+- Какие паттерны обработки ошибок применять?
+- Есть ли готовые UI-компоненты, которые нужно переиспользовать?
 
-**Scope:**
-- Should we implement all features in this milestone or prioritize?
-- Are there any features to skip for now?
-- What's the testing strategy?
+**Объем:**
+- Реализовать все функции в этом этапе или приоритизировать?
+- Есть ли фичи, которые можно отложить?
+- Какова стратегия тестирования?
 
-## What Your Agent Needs to Build
+## Что агенту нужно реализовать
 
-The Design OS export provides finished UI designs. Your implementation agent still needs to create:
+Экспорт Design OS дает готовые UI-дизайны. Агенту реализации все еще нужно создать:
 
-**Backend:**
-- Database schema and migrations
-- API endpoints (REST or GraphQL)
-- Business logic and validation
-- Authentication and authorization
+**Бэкенд:**
+- Схему БД и миграции
+- API-эндпоинты (REST или GraphQL)
+- Бизнес-логику и валидацию
+- Аутентификацию и авторизацию
 
-**Data Layer:**
-- State management setup
-- Data fetching and caching
-- Real-time updates (if needed)
+**Слой данных:**
+- Настройку управления состоянием
+- Получение и кэширование данных
+- Реалтайм-обновления (при необходимости)
 
-**Integration:**
-- Routing configuration
-- Callback implementations
-- Error handling and loading states
-- Empty state handling (when no records exist)
-- Form validation and submission
+**Интеграция:**
+- Настройку маршрутизации
+- Реализацию коллбеков
+- Обработку ошибок и состояния загрузки
+- Обработку пустых состояний (когда нет записей)
+- Валидацию и отправку форм
 
-**Tests:**
-- Unit and integration tests based on `tests.md` instructions
-- User flow tests (success and failure paths)
-- Empty state verification
+**Тесты:**
+- Модульные и интеграционные тесты на основе `tests.md`
+- Тесты пользовательских сценариев (успех и ошибка)
+- Проверку пустых состояний
 
-**The UI components are complete and production-ready.** Focus implementation effort on the data layer, backend, and tests—don't redesign or restyle the provided components.
+**UI-компоненты уже готовы и годятся для продакшена.** Сфокусируйте усилия на слое данных, бэкенде и тестах — не переделывайте и не рестилизируйте компоненты.
 
-## Tips
+## Советы
 
-- **Use the pre-written prompts** — They include important clarifying questions about auth and data modeling
-- **Always include product-overview.md** — It gives essential context about the full product
-- **Write tests first** — Use the `tests.md` instructions for TDD
-- **Review incrementally** — Section-by-section implementation lets you catch issues early
-- **Test with sample data first** — Use the provided sample-data.json before building real APIs
-- **Handle empty states** — Ensure good UX when no records exist (first-time users)
-- **Trust the components** — They're designed and styled already; wire them up, don't rebuild them
+- **Используйте готовые промпты** — они включают важные вопросы про авторизацию и модель данных
+- **Всегда прикладывайте product-overview.md** — он дает контекст по всему продукту
+- **Сначала пишите тесты** — используйте инструкции из `tests.md` для TDD
+- **Проверяйте поэтапно** — реализация по разделам помогает раньше ловить проблемы
+- **Сначала тестируйте на sample-data.json** — до интеграции реальных API
+- **Обрабатывайте пустые состояния** — поддерживайте хороший UX при отсутствии записей
+- **Доверьтесь компонентам** — они уже спроектированы и стилизованы; подключайте, не пересобирайте

@@ -18,6 +18,15 @@ interface SectionProgress {
   screenshotCount: number
 }
 
+function formatCountLabel(count: number, one: string, few: string, many: string): string {
+  const mod10 = count % 10
+  const mod100 = count % 100
+
+  if (mod10 === 1 && mod100 !== 11) return `${count} ${one}`
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${count} ${few}`
+  return `${count} ${many}`
+}
+
 function getSectionProgress(sectionId: string): SectionProgress {
   const screenDesigns = getSectionScreenDesigns(sectionId)
   const screenshots = getSectionScreenshots(sectionId)
@@ -58,14 +67,14 @@ export function SectionsPage() {
         {/* Page intro */}
         <div className="mb-8">
           <h1 className="text-2xl font-semibold text-stone-900 dark:text-stone-100 mb-2">
-            Sections
+            Разделы
           </h1>
           <p className="text-stone-600 dark:text-stone-400">
-            Design each section of your product with specifications, sample data, and screen designs.
+            Проработайте каждый раздел продукта: спецификации, примерные данные и дизайны экранов.
           </p>
           {sections.length > 0 && (
             <p className="text-sm text-stone-500 dark:text-stone-400 mt-2">
-              {completedSections} of {sections.length} sections completed
+              Готово {completedSections} из {sections.length} разделов
             </p>
           )}
         </div>
@@ -80,7 +89,7 @@ export function SectionsPage() {
           <Card className="border-stone-200 dark:border-stone-700 shadow-sm">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-                All Sections
+                Все разделы
               </CardTitle>
             </CardHeader>
             <CardContent className="p-0">
@@ -121,14 +130,18 @@ export function SectionsPage() {
 
                             {/* Progress indicators */}
                             <div className="flex items-center gap-3 mt-2">
-                              <ProgressDot label="Spec" done={progress?.hasSpec} />
-                              <ProgressDot label="Data" done={progress?.hasData} />
+                              <ProgressDot label="Спецификация" done={progress?.hasSpec} />
+                              <ProgressDot label="Данные" done={progress?.hasData} />
                               <ProgressDot
-                                label={progress?.screenDesignCount ? `${progress.screenDesignCount} screen design${progress.screenDesignCount !== 1 ? 's' : ''}` : 'Screen Designs'}
+                                label={progress?.screenDesignCount
+                                  ? formatCountLabel(progress.screenDesignCount, 'дизайн экрана', 'дизайна экрана', 'дизайнов экрана')
+                                  : 'Дизайны экранов'}
                                 done={progress?.hasScreenDesigns}
                               />
                               <ProgressDot
-                                label={progress?.screenshotCount ? `${progress.screenshotCount} screenshot${progress.screenshotCount !== 1 ? 's' : ''}` : 'Screenshots'}
+                                label={progress?.screenshotCount
+                                  ? formatCountLabel(progress.screenshotCount, 'скриншот', 'скриншота', 'скриншотов')
+                                  : 'Скриншоты'}
                                 done={progress?.hasScreenshots}
                                 optional
                               />

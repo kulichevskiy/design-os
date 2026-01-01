@@ -1,59 +1,59 @@
-# Getting Started
+# Начало работы
 
-## Clone the Repository
+## Клонируйте репозиторий
 
 ```bash
 git clone https://github.com/buildermethods/design-os.git my-project-design
 cd my-project-design
 ```
 
-Replace `my-project-design` with whatever you want to name your design workspace.
+Замените `my-project-design` на любое название вашего дизайн-пространства.
 
-## Remove the Original Remote
+## Удалите исходный remote
 
 ```bash
 git remote remove origin
 ```
 
-Now you have a clean local instance ready to use.
+Теперь у вас чистый локальный экземпляр, готовый к использованию.
 
-## Install Dependencies
+## Установите зависимости
 
 ```bash
 npm install
 ```
 
-## Start the Dev Server
+## Запустите dev-сервер
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Откройте [http://localhost:5173](http://localhost:5173) в браузере.
 
-## Open Claude Code
+## Откройте Claude Code
 
-In the same project directory, start Claude Code:
+В той же директории проекта запустите Claude Code:
 
 ```bash
 claude
 ```
 
-You're ready to start designing. Run `/product-vision` to begin defining your product.
+Можно начинать дизайн. Запустите `/product-vision`, чтобы начать формулировать продукт.
 
 ---
 
-## Optional: Save as Your Own Template
+## Опционально: сохраните как свой шаблон
 
-If you want to reuse Design OS for future projects:
+Если хотите использовать Design OS как шаблон для будущих проектов:
 
-1. Push to your own GitHub repository:
+1. Запушьте в свой репозиторий GitHub:
 
 ```bash
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 git push -u origin main
 ```
 
-2. Go to your repository on GitHub, click **Settings**, and check **Template repository**.
+2. Перейдите в репозиторий на GitHub, откройте **Settings** и включите **Template repository**.
 
-Now you can create new instances using GitHub's "Use this template" button.
+Теперь вы сможете создавать новые экземпляры через кнопку GitHub "Use this template".

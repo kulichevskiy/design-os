@@ -13,6 +13,15 @@ interface DataCardProps {
   data: Record<string, unknown> | null
 }
 
+function formatCountLabel(count: number, one: string, few: string, many: string): string {
+  const mod10 = count % 10
+  const mod100 = count % 100
+
+  if (mod10 === 1 && mod100 !== 11) return `${count} ${one}`
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${count} ${few}`
+  return `${count} ${many}`
+}
+
 function extractMeta(data: Record<string, unknown>): DataMeta | null {
   const meta = data._meta as DataMeta | undefined
   if (meta && typeof meta === 'object' && meta.models && meta.relationships) {
@@ -54,11 +63,11 @@ export function DataCard({ data }: DataCardProps) {
       <CardHeader className="pb-4">
         <div className="flex items-center gap-3">
           <CardTitle className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-            Sample Data
+            Примерные данные
           </CardTitle>
           {recordCount > 0 && (
             <span className="text-xs font-medium text-stone-500 dark:text-stone-400 bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">
-              {recordCount} {recordCount === 1 ? 'record' : 'records'}
+              {formatCountLabel(recordCount, 'запись', 'записи', 'записей')}
             </span>
           )}
         </div>
@@ -70,7 +79,7 @@ export function DataCard({ data }: DataCardProps) {
             {/* Models - Card Grid */}
             <div>
               <h4 className="text-sm font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide mb-3">
-                Data Models
+                Модели данных
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {Object.entries(meta.models).map(([modelName, description]) => (
@@ -93,7 +102,7 @@ export function DataCard({ data }: DataCardProps) {
             {meta.relationships.length > 0 && (
               <div>
                 <h4 className="text-sm font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide mb-3">
-                  How They Connect
+                  Как они связаны
                 </h4>
                 <ul className="space-y-2">
                   {meta.relationships.map((relationship, index) => (
@@ -121,7 +130,7 @@ export function DataCard({ data }: DataCardProps) {
               strokeWidth={1.5}
             />
             <span className="text-xs text-stone-500 dark:text-stone-400 group-hover:text-stone-700 dark:group-hover:text-stone-300 transition-colors">
-              {isJsonOpen ? 'Hide' : 'View'} JSON
+              {isJsonOpen ? 'Скрыть' : 'Показать'} JSON
             </span>
           </CollapsibleTrigger>
           <CollapsibleContent>

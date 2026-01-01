@@ -1,1 +1,1 @@
-Refer to @agents.md
+См. @agents.md

@@ -7,10 +7,10 @@ interface NextPhaseButtonProps {
 }
 
 const phaseConfig: Record<Exclude<Phase, 'product'>, { label: string; icon: typeof FileText; path: string }> = {
-  'data-model': { label: 'Data Model', icon: Boxes, path: '/data-model' },
-  'design': { label: 'Design', icon: Layout, path: '/design' },
-  'sections': { label: 'Sections', icon: LayoutList, path: '/sections' },
-  'export': { label: 'Export', icon: Package, path: '/export' },
+  'data-model': { label: 'Модель данных', icon: Boxes, path: '/data-model' },
+  'design': { label: 'Дизайн', icon: Layout, path: '/design' },
+  'sections': { label: 'Разделы', icon: LayoutList, path: '/sections' },
+  'export': { label: 'Экспорт', icon: Package, path: '/export' },
 }
 
 export function NextPhaseButton({ nextPhase }: NextPhaseButtonProps) {
@@ -25,7 +25,7 @@ export function NextPhaseButton({ nextPhase }: NextPhaseButtonProps) {
     >
       <div className="flex items-center gap-3">
         <Icon className="w-5 h-5" strokeWidth={1.5} />
-        <span className="font-medium">Continue to {config.label}</span>
+        <span className="font-medium">Перейти к «{config.label}»</span>
       </div>
       <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" strokeWidth={1.5} />
     </button>

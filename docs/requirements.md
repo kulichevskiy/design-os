@@ -1,22 +1,22 @@
-# Requirements
+# Требования
 
-## Running Design OS
+## Запуск Design OS
 
-Design OS runs locally on your machine. You'll need:
+Design OS запускается локально на вашем компьютере. Вам понадобится:
 
-- **Node.js** (v18 or higher)
-- **npm** (comes with Node.js)
-- **An AI coding assistant** — Design OS uses slash commands to guide the design process. Claude Code is recommended, but you can invoke the Design OS commands from any AI coding tool that supports custom commands or prompts (Cursor, Windsurf, Codex, etc.)
+- **Node.js** (v18 или выше)
+- **npm** (идет вместе с Node.js)
+- **AI-ассистент для кодинга** — Design OS использует слэш-команды для управления процессом. Рекомендуется Claude Code, но команды Design OS можно запускать из любого инструмента, который поддерживает кастомные команды или промпты (Cursor, Windsurf, Codex и т.д.)
 
-## Installing Your Exported Components
+## Установка экспортированных компонентов
 
-When you export your designs, you get production-ready React components. Your target codebase needs:
+При экспорте дизайнов вы получаете готовые React-компоненты. В вашей целевой кодовой базе нужно:
 
-### Required
+### Обязательно
 
-- **React** (v18 or higher)
-- **Tailwind CSS** (v4) — Components use Tailwind utility classes for styling
+- **React** (v18 или выше)
+- **Tailwind CSS** (v4) — компоненты используют утилиты Tailwind для стилизации
 
-### Backend
+### Бэкенд
 
-Your backend can be anything—Rails, Laravel, Next.js API routes, Python, Go, whatever. Design OS only handles the frontend design layer.
+Бэкенд может быть любым — Rails, Laravel, Next.js API routes, Python, Go и т.д. Design OS отвечает только за слой фронтенд-дизайна.

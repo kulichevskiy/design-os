@@ -97,14 +97,14 @@ export function parseSpec(md: string): ParsedSpec | null {
   try {
     // Extract title from first # heading
     const titleMatch = md.match(/^#\s+(.+)$/m)
-    const title = titleMatch?.[1]?.trim() || 'Section Specification'
+    const title = titleMatch?.[1]?.trim() || 'Спецификация раздела'
 
     // Extract overview - content between ## Overview and next ##
-    const overviewMatch = md.match(/## Overview\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const overviewMatch = md.match(/## (?:Overview|Обзор)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
     const overview = overviewMatch?.[1]?.trim() || ''
 
     // Extract user flows - bullet list after ## User Flows
-    const userFlowsSection = md.match(/## User Flows\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const userFlowsSection = md.match(/## (?:User Flows|Пользовательские сценарии|Сценарии пользователя)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
     const userFlows: string[] = []
 
     if (userFlowsSection?.[1]) {
@@ -118,7 +118,7 @@ export function parseSpec(md: string): ParsedSpec | null {
     }
 
     // Extract UI requirements - bullet list after ## UI Requirements
-    const uiReqSection = md.match(/## UI Requirements\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const uiReqSection = md.match(/## (?:UI Requirements|Требования к интерфейсу|Требования к UI)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
     const uiRequirements: string[] = []
 
     if (uiReqSection?.[1]) {

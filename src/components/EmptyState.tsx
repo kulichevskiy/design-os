@@ -15,57 +15,57 @@ const config: Record<EmptyStateType, {
 }> = {
   overview: {
     icon: FileText,
-    title: 'No product defined yet',
+    title: 'Продукт еще не описан',
     command: '/product-vision',
-    description: 'Define your product vision, key problems, and features',
+    description: 'Опишите видение продукта, ключевые проблемы и возможности',
   },
   roadmap: {
     icon: Map,
-    title: 'No roadmap defined yet',
+    title: 'Дорожная карта еще не задана',
     command: '/product-roadmap',
-    description: 'Break down your product into development sections',
+    description: 'Разбейте продукт на разделы разработки',
   },
   spec: {
     icon: ClipboardList,
-    title: 'No specification defined yet',
+    title: 'Спецификация еще не создана',
     command: '/shape-section',
-    description: 'Define the user flows and UI requirements',
+    description: 'Определите пользовательские сценарии и требования к интерфейсу',
   },
   data: {
     icon: Database,
-    title: 'No sample data generated yet',
+    title: 'Примерные данные еще не сгенерированы',
     command: '/sample-data',
-    description: 'Create realistic sample data for screen designs',
+    description: 'Создайте реалистичные примеры данных для дизайнов экранов',
   },
   'screen-designs': {
     icon: Layout,
-    title: 'No screen designs created yet',
+    title: 'Дизайны экранов еще не созданы',
     command: '/design-screen',
-    description: 'Create screen designs for this section',
+    description: 'Создайте дизайн экранов для этого раздела',
   },
   'data-model': {
     icon: Boxes,
-    title: 'No data model defined yet',
+    title: 'Модель данных еще не задана',
     command: '/data-model',
-    description: 'Define the core entities and relationships',
+    description: 'Определите ключевые сущности и связи',
   },
   'design-system': {
     icon: Palette,
-    title: 'No design tokens defined yet',
+    title: 'Дизайн-токены еще не заданы',
     command: '/design-tokens',
-    description: 'Choose colors and typography for your product',
+    description: 'Выберите цвета и типографику для продукта',
   },
   shell: {
     icon: PanelLeft,
-    title: 'No application shell designed yet',
+    title: 'Оболочка приложения еще не создана',
     command: '/design-shell',
-    description: 'Design the navigation and layout',
+    description: 'Спроектируйте навигацию и компоновку',
   },
   export: {
     icon: Package,
-    title: 'Ready to export',
+    title: 'Готово к экспорту',
     command: '/export-product',
-    description: 'Generate the complete handoff package',
+    description: 'Сгенерируйте полный пакет передачи',
   },
 }
 
@@ -87,7 +87,7 @@ export function EmptyState({ type }: EmptyStateProps) {
           </p>
           <div className="bg-stone-100 dark:bg-stone-800 rounded-md px-4 py-2.5 w-full">
             <p className="text-xs text-stone-500 dark:text-stone-400 mb-0.5">
-              Run in Claude Code:
+              Запустите в Claude Code:
             </p>
             <code className="text-sm font-mono text-stone-700 dark:text-stone-300">
               {command}

@@ -38,7 +38,7 @@ export function parseDataModel(md: string): DataModel | null {
     const relationships: string[] = []
 
     // Extract entities section
-    const entitiesSection = md.match(/## Entities\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const entitiesSection = md.match(/## (?:Entities|Сущности)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
 
     if (entitiesSection?.[1]) {
       // Match ### EntityName followed by description
@@ -52,7 +52,7 @@ export function parseDataModel(md: string): DataModel | null {
     }
 
     // Extract relationships section
-    const relationshipsSection = md.match(/## Relationships\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const relationshipsSection = md.match(/## (?:Relationships|Связи)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
 
     if (relationshipsSection?.[1]) {
       const lines = relationshipsSection[1].split('\n')

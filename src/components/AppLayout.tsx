@@ -21,7 +21,7 @@ export function AppLayout({
   children,
   title,
   backTo,
-  backLabel = 'Back',
+  backLabel = 'Назад',
   showPhaseNav = true,
 }: AppLayoutProps) {
   const navigate = useNavigate()
@@ -95,7 +95,7 @@ export function AppLayout({
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-stone-400 dark:text-stone-500 hover:text-stone-600 dark:hover:text-stone-400 transition-colors group"
         >
-          <span className="text-xs">Powered by</span>
+          <span className="text-xs">При поддержке</span>
           <div className="w-5 h-5 rounded bg-stone-300 dark:bg-stone-600 flex items-center justify-center transition-colors group-hover:bg-stone-400 dark:group-hover:bg-stone-500">
             <Layers className="w-3 h-3 text-stone-100 dark:text-stone-900" strokeWidth={1.5} />
           </div>

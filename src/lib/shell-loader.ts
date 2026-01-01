@@ -45,11 +45,11 @@ export function parseShellSpec(md: string): ShellSpec | null {
 
   try {
     // Extract overview
-    const overviewMatch = md.match(/## Overview\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const overviewMatch = md.match(/## (?:Overview|Обзор)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
     const overview = overviewMatch?.[1]?.trim() || ''
 
     // Extract navigation items
-    const navSection = md.match(/## Navigation Structure\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const navSection = md.match(/## (?:Navigation Structure|Структура навигации)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
     const navigationItems: string[] = []
 
     if (navSection?.[1]) {
@@ -63,7 +63,7 @@ export function parseShellSpec(md: string): ShellSpec | null {
     }
 
     // Extract layout pattern
-    const layoutMatch = md.match(/## Layout Pattern\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
+    const layoutMatch = md.match(/## (?:Layout Pattern|Шаблон компоновки|Шаблон макета)\s*\n+([\s\S]*?)(?=\n## |\n#[^#]|$)/)
     const layoutPattern = layoutMatch?.[1]?.trim() || ''
 
     // Return null if we couldn't parse anything meaningful

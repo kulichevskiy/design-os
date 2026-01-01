@@ -19,7 +19,7 @@ export function ScreenDesignsCard({ screenDesigns, sectionId }: ScreenDesignsCar
     <Card className="border-stone-200 dark:border-stone-700 shadow-sm">
       <CardHeader className="pb-4">
         <CardTitle className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-          Screen Designs
+          Дизайны экранов
         </CardTitle>
       </CardHeader>
       <CardContent className="p-0">

@@ -1,113 +1,113 @@
-# Product Planning
+# Планирование продукта
 
-The first phase of Design OS establishes the foundation for your product. Complete these steps before designing any screens.
+Первая фаза Design OS закладывает основу продукта. Завершите эти шаги до проектирования экранов.
 
-## 1. Product Vision
+## 1. Видение продукта
 
 ```
 /product-vision
 ```
 
-Define your product's core identity. This is a conversational process where you'll establish:
+Определите основу продукта. Это диалоговый процесс, в котором вы сформируете:
 
-- **Product name** — A clear, memorable name
-- **Description** — 1-3 sentences capturing the essence
-- **Problems & solutions** — What pain points you're addressing and how
-- **Key features** — The main capabilities that make this possible
+- **Название продукта** — ясное и запоминающееся
+- **Описание** — 1–3 предложения, фиксирующие суть
+- **Проблемы и решения** — какие боли вы решаете и как
+- **Ключевые возможности** — основные функции, которые это обеспечивают
 
-Share any notes, ideas, or rough thoughts you have about what you're building. The AI will ask clarifying questions and help you refine everything into a clear product overview.
+Поделитесь заметками, идеями или черновыми мыслями о том, что вы строите. AI задаст уточняющие вопросы и поможет оформить это в понятный обзор продукта.
 
-**Creates:** `product/product-overview.md`
+**Создает:** `product/product-overview.md`
 
-## 2. Product Roadmap
+## 2. Дорожная карта продукта
 
 ```
 /product-roadmap
 ```
 
-Break your product into 3-5 sections. Each section represents:
+Разбейте продукт на 3–5 разделов. Каждый раздел — это:
 
-- A navigation item in your app's UI
-- A self-contained feature area that can be designed and built independently
-- A logical phase of your development roadmap
+- пункт навигации в интерфейсе приложения
+- самостоятельная функциональная область, которую можно проектировать и реализовывать отдельно
+- логичная фаза дорожной карты разработки
 
-Based on your product overview, the AI will propose sections and discuss ordering. Sections are sequenced by development priority—the first section is your core functionality, with each subsequent section building on it.
+На основе обзора продукта AI предложит разделы и обсудит порядок. Разделы выстраиваются по приоритету разработки: первый — ядро функциональности, каждый следующий опирается на предыдущие.
 
-**Creates:** `product/product-roadmap.md`
+**Создает:** `product/product-roadmap.md`
 
-## 3. Data Model
+## 3. Модель данных
 
 ```
 /data-model
 ```
 
-Define the core entities in your product—the "nouns" of your system. What are the main things users create, view, and manage?
+Определите ключевые сущности продукта — "существительные" вашей системы. Какие основные объекты пользователи создают, просматривают и управляют ими?
 
-The focus is conceptual, not technical:
+Фокус — концептуальный, не технический:
 
-- **Entity names** — User, Project, Invoice, Task, etc.
-- **Plain-language descriptions** — What each entity represents
-- **Relationships** — How entities connect to each other
+- **Имена сущностей** — User, Project, Invoice, Task и т.д.
+- **Описания простыми словами** — что представляет каждая сущность
+- **Связи** — как сущности связаны между собой
 
-Don't worry about database schemas or field types. Keep it minimal. The implementation agent will extend the model with additional details as needed.
+Не думайте о схемах БД и типах полей. Держите модель минимальной. Агент реализации при необходимости расширит ее деталями.
 
-**Creates:** `product/data-model/data-model.md`
+**Создает:** `product/data-model/data-model.md`
 
-## 4. Design Tokens
+## 4. Дизайн-токены
 
 ```
 /design-tokens
 ```
 
-Choose your visual identity:
+Выберите визуальную айдентику:
 
-### Colors
+### Цвета
 
-Select from Tailwind's built-in color palette:
+Выберите из встроенной палитры Tailwind:
 
-- **Primary** — Main accent for buttons, links, key actions (e.g., `blue`, `indigo`, `emerald`, `lime`)
-- **Secondary** — Complementary accent for tags, highlights (e.g., `violet`, `amber`, `teal`)
-- **Neutral** — Backgrounds, text, borders (e.g., `slate`, `gray`, `zinc`, `stone`)
+- **Primary** — основной акцент для кнопок, ссылок, ключевых действий (например, `blue`, `indigo`, `emerald`, `lime`)
+- **Secondary** — дополнительный акцент для тегов и выделений (например, `violet`, `amber`, `teal`)
+- **Neutral** — фоны, текст, границы (например, `slate`, `gray`, `zinc`, `stone`)
 
-### Typography
+### Типографика
 
-Select from Google Fonts:
+Выберите из Google Fonts:
 
-- **Heading** — For titles and section headers (e.g., `DM Sans`, `Inter`, `Space Grotesk`)
-- **Body** — For paragraphs and UI text (e.g., `Inter`, `Source Sans 3`, `Nunito Sans`)
-- **Mono** — For code and technical content (e.g., `JetBrains Mono`, `Fira Code`)
+- **Heading** — для заголовков и шапок (например, `DM Sans`, `Inter`, `Space Grotesk`)
+- **Body** — для основного текста и UI (например, `Inter`, `Source Sans 3`, `Nunito Sans`)
+- **Mono** — для кода и технического контента (например, `JetBrains Mono`, `Fira Code`)
 
-The AI will suggest options based on your product type and help you find a combination that fits.
+AI предложит варианты под тип продукта и поможет подобрать подходящую комбинацию.
 
-**Creates:** `product/design-system/colors.json`, `product/design-system/typography.json`
+**Создает:** `product/design-system/colors.json`, `product/design-system/typography.json`
 
-## 5. Application Shell
+## 5. Оболочка приложения
 
 ```
 /design-shell
 ```
 
-Design the persistent navigation and layout that wraps all your sections. Choose from common patterns:
+Спроектируйте постоянную навигацию и компоновку, которые оборачивают все разделы. Выберите один из распространенных паттернов:
 
-- **Sidebar Navigation** — Vertical nav on the left, content on the right. Best for dashboard-style tools, admin panels, apps with many sections.
-- **Top Navigation** — Horizontal nav at top, content below. Best for simpler apps, marketing-style products, fewer sections.
-- **Minimal Header** — Just logo + user menu. Best for single-purpose tools, wizard-style flows.
+- **Боковая навигация** — вертикальное меню слева, контент справа. Лучше всего для дашбордов, админок и приложений с множеством разделов.
+- **Верхняя навигация** — горизонтальное меню сверху, контент ниже. Подходит для простых приложений и продуктов с небольшим количеством разделов.
+- **Минимальный хедер** — логотип + меню пользователя. Хорош для узкоспециализированных инструментов и пошаговых сценариев.
 
-You'll also define:
+Также вы определите:
 
-- User menu placement and contents
-- Responsive behavior (how it adapts on mobile)
-- Any additional nav items (Settings, Help, etc.)
+- расположение и содержимое меню пользователя
+- адаптивное поведение (как интерфейс ведет себя на мобильных)
+- дополнительные пункты навигации (Настройки, Справка и т.д.)
 
-The shell is implemented as React components that will wrap your section screen designs.
+Оболочка реализуется как React-компоненты, которые будут оборачивать дизайны экранов разделов.
 
-**Creates:**
-- `product/shell/spec.md` — Shell specification
-- `src/shell/components/AppShell.tsx` — Main shell wrapper
-- `src/shell/components/MainNav.tsx` — Navigation component
-- `src/shell/components/UserMenu.tsx` — User menu component
-- `src/shell/ShellPreview.tsx` — Preview wrapper for Design OS
+**Создает:**
+- `product/shell/spec.md` — спецификация оболочки
+- `src/shell/components/AppShell.tsx` — основной оборачивающий компонент
+- `src/shell/components/MainNav.tsx` — компонент навигации
+- `src/shell/components/UserMenu.tsx` — компонент меню пользователя
+- `src/shell/ShellPreview.tsx` — превью-обертка для Design OS
 
-## What's Next
+## Что дальше
 
-With the foundation established, you're ready to design individual sections. See [Designing Sections](design-section.md) for the next steps.
+Когда основа готова, можно переходить к проектированию разделов. Следующие шаги — в [Проектирование разделов](design-section.md).

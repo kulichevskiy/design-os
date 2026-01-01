@@ -48,6 +48,11 @@ export function ThemeToggle() {
   }
 
   const isDark = theme === 'dark' || (theme === 'system' && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  const themeLabel: Record<Theme, string> = {
+    light: 'светлая',
+    dark: 'темная',
+    system: 'системная',
+  }
 
   return (
     <Button
@@ -55,7 +60,7 @@ export function ThemeToggle() {
       size="icon"
       onClick={toggleTheme}
       className="w-8 h-8 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100"
-      title={`Theme: ${theme}`}
+      title={`Тема: ${themeLabel[theme]}`}
     >
       {isDark ? (
         <Moon className="w-4 h-4" strokeWidth={1.5} />

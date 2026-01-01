@@ -16,7 +16,7 @@ export function ProductOverviewCard({ overview }: ProductOverviewCardProps) {
     <Card className="border-stone-200 dark:border-stone-700 shadow-sm">
       <CardHeader className="pb-4">
         <CardTitle className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-          Product overview: {overview.name}
+          Обзор продукта: {overview.name}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -32,7 +32,7 @@ export function ProductOverviewCard({ overview }: ProductOverviewCardProps) {
           <Collapsible open={problemsOpen} onOpenChange={setProblemsOpen}>
             <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left group">
               <span className="text-sm font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide">
-                Problems & Solutions
+                Проблемы и решения
                 <span className="ml-2 text-stone-400 dark:text-stone-500 normal-case tracking-normal">
                   ({overview.problems.length})
                 </span>
@@ -70,7 +70,7 @@ export function ProductOverviewCard({ overview }: ProductOverviewCardProps) {
           <Collapsible open={featuresOpen} onOpenChange={setFeaturesOpen}>
             <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left group">
               <span className="text-sm font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide">
-                Key Features
+                Ключевые возможности
                 <span className="ml-2 text-stone-400 dark:text-stone-500 normal-case tracking-normal">
                   ({overview.features.length})
                 </span>

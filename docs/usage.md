@@ -1,62 +1,62 @@
-# Usage
+# Использование
 
-Design OS uses slash commands to guide you through the design process. Each command is a conversation—the AI asks questions, you provide direction, and together you shape your product.
+Design OS использует слэш-команды, чтобы вести вас по процессу дизайна. Каждая команда — это диалог: AI задает вопросы, вы задаете направление, и вместе вы формируете продукт.
 
-## The Design Workflow
+## Процесс дизайна
 
-Design OS follows a structured sequence. Each step builds on the previous one.
+Design OS следует структурированной последовательности. Каждый шаг опирается на предыдущий.
 
-### Phase 1: Product Planning
+### Фаза 1: планирование продукта
 
-Before designing any screens, establish the foundation:
+До проектирования экранов заложите основу:
 
-1. **Product Vision** — Define what you're building and why
-2. **Product Roadmap** — Break your product into sections
-3. **Data Model** — Define the core entities in your system
-4. **Design Tokens** — Choose colors and typography
-5. **Application Shell** — Design navigation and layout
+1. **Видение продукта** — определить, что вы строите и зачем
+2. **Дорожная карта продукта** — разбить продукт на разделы
+3. **Модель данных** — определить ключевые сущности системы
+4. **Дизайн-токены** — выбрать цвета и типографику
+5. **Оболочка приложения** — спроектировать навигацию и компоновку
 
-See [Product Planning](product-planning.md) for details on each command.
+См. [Планирование продукта](product-planning.md) для деталей по каждой команде.
 
-### Phase 2: Section Design
+### Фаза 2: проектирование разделов
 
-Once the foundation is set, work through each section:
+Когда основа готова, пройдите каждый раздел:
 
-1. **Shape the Section** — Define scope and requirements
-2. **Create Sample Data** — Generate realistic data and types
-3. **Design the Screen** — Build the actual React components
-4. **Capture Screenshots** — Document the design (optional)
+1. **Сформируйте раздел** — определите область и требования
+2. **Создайте примерные данные** — сгенерируйте реалистичные данные и типы
+3. **Спроектируйте экран** — соберите реальные React-компоненты
+4. **Сделайте скриншоты** — задокументируйте дизайн (опционально)
 
-Repeat for each section in your roadmap.
+Повторите для каждого раздела дорожной карты.
 
-See [Designing Sections](design-section.md) for details on each command.
+См. [Проектирование разделов](design-section.md) для деталей по каждой команде.
 
-### Phase 3: Export
+### Фаза 3: экспорт
 
-When all sections are designed:
+Когда все разделы готовы:
 
-1. **Export** — Generate the complete handoff package
+1. **Экспорт** — сгенерировать полный пакет передачи
 
-See [Export](export.md) for details on what's included and how to use it.
+См. [Экспорт](export.md) для деталей по содержимому и использованию.
 
-## Quick Reference
+## Быстрая справка
 
-| Command | Purpose |
-|---------|---------|
-| `/product-vision` | Define product name, description, problems, features |
-| `/product-roadmap` | Break product into sections |
-| `/data-model` | Define core entities and relationships |
-| `/design-tokens` | Choose colors and typography |
-| `/design-shell` | Design navigation and layout |
-| `/shape-section` | Define a section's scope and requirements |
-| `/sample-data` | Generate sample data and TypeScript types |
-| `/design-screen` | Create screen design components |
-| `/screenshot-design` | Capture screenshots |
-| `/export-product` | Generate the complete handoff package |
+| Команда | Назначение |
+|---------|------------|
+| `/product-vision` | Определить название, описание, проблемы и возможности продукта |
+| `/product-roadmap` | Разбить продукт на разделы |
+| `/data-model` | Определить ключевые сущности и связи |
+| `/design-tokens` | Выбрать цвета и типографику |
+| `/design-shell` | Спроектировать навигацию и компоновку |
+| `/shape-section` | Определить область и требования раздела |
+| `/sample-data` | Сгенерировать данные и типы TypeScript |
+| `/design-screen` | Создать компоненты дизайна экранов |
+| `/screenshot-design` | Снять скриншоты |
+| `/export-product` | Сгенерировать полный пакет передачи |
 
-## Tips
+## Советы
 
-- **Follow the sequence** — Each step builds on the previous. Don't skip ahead.
-- **Be specific** — The more detail you provide, the better the output.
-- **Iterate** — Each command is a conversation. Refine until you're happy.
-- **Restart the dev server** — After creating new components, restart to see changes.
+- **Следуйте последовательности** — каждый шаг опирается на предыдущий
+- **Будьте конкретны** — чем больше деталей, тем лучше результат
+- **Итерируйте** — каждая команда — диалог, уточняйте до нужного качества
+- **Перезапускайте dev-сервер** — после создания компонентов, чтобы увидеть изменения

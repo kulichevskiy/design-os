@@ -23,7 +23,7 @@ export function SpecCard({ spec, sectionTitle }: SpecCardProps) {
     <Card className="border-stone-200 dark:border-stone-700 shadow-sm">
       <CardHeader className="pb-4">
         <CardTitle className="text-lg font-semibold text-stone-900 dark:text-stone-100">
-          {sectionTitle || 'Specification'}
+          {sectionTitle || 'Спецификация'}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -39,7 +39,7 @@ export function SpecCard({ spec, sectionTitle }: SpecCardProps) {
           <Collapsible open={userFlowsOpen} onOpenChange={setUserFlowsOpen}>
             <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left group">
               <span className="text-sm font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide">
-                User Flows
+                Пользовательские сценарии
                 <span className="ml-2 text-stone-400 dark:text-stone-500 normal-case tracking-normal">
                   ({spec.userFlows.length})
                 </span>
@@ -71,7 +71,7 @@ export function SpecCard({ spec, sectionTitle }: SpecCardProps) {
           <Collapsible open={uiReqOpen} onOpenChange={setUiReqOpen}>
             <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left group">
               <span className="text-sm font-medium text-stone-500 dark:text-stone-400 uppercase tracking-wide">
-                UI Requirements
+                Требования к интерфейсу
                 <span className="ml-2 text-stone-400 dark:text-stone-500 normal-case tracking-normal">
                   ({spec.uiRequirements.length})
                 </span>
@@ -104,14 +104,14 @@ export function SpecCard({ spec, sectionTitle }: SpecCardProps) {
             <>
               <PanelTop className="w-4 h-4 text-stone-400 dark:text-stone-500" strokeWidth={1.5} />
               <span className="text-sm text-stone-500 dark:text-stone-400">
-                Displays inside app shell
+                Показывается внутри оболочки приложения
               </span>
             </>
           ) : (
             <>
               <Square className="w-4 h-4 text-stone-400 dark:text-stone-500" strokeWidth={1.5} />
               <span className="text-sm text-stone-500 dark:text-stone-400">
-                Standalone page (no shell)
+                Отдельная страница (без оболочки)
               </span>
             </>
           )}

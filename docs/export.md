@@ -1,132 +1,132 @@
-# Export
+# Экспорт
 
-When your designs are complete, export everything your implementation agent (or team) needs to build the product.
+Когда дизайн готов, экспортируйте все, что нужно агенту реализации (или команде), чтобы собрать продукт.
 
-## When to Export
+## Когда экспортировать
 
-You're ready to export when:
+Вы готовы к экспорту, когда:
 
-- Product vision and roadmap are defined
-- At least one section has screen designs
-- You're satisfied with the design direction
+- видение продукта и дорожная карта определены
+- хотя бы один раздел имеет дизайн экранов
+- вас устраивает дизайн-направление
 
-You can export at any point—it doesn't have to be "complete." Exporting generates a snapshot of your current designs. You can always export again later as you add more sections.
+Экспорт возможен в любой момент — не обязательно ждать "полной готовности". Экспорт создает снимок текущего состояния дизайнов. Вы всегда можете экспортировать снова по мере добавления разделов.
 
-## Running the Export
+## Запуск экспорта
 
 ```
 /export-product
 ```
 
-The export command:
+Команда экспорта:
 
-1. **Checks prerequisites** — Verifies required files exist
-2. **Gathers all design assets** — Components, types, data, tokens
-3. **Generates implementation instructions** — Including ready-to-use prompts
-4. **Generates test instructions** — TDD specs for each section
-5. **Creates the export package** — A complete `product-plan/` directory
-6. **Creates a zip file** — `product-plan.zip` for easy download
+1. **Проверяет требования** — убеждается, что нужные файлы существуют
+2. **Собирает все дизайн-артефакты** — компоненты, типы, данные, токены
+3. **Генерирует инструкции реализации** — включая готовые промпты
+4. **Генерирует инструкции по тестам** — TDD-спеки для каждого раздела
+5. **Создает пакет экспорта** — полный каталог `product-plan/`
+6. **Создает zip-файл** — `product-plan.zip` для удобного скачивания
 
-## What's Included
+## Что входит в пакет
 
-### Ready-to-Use Prompts
+### Готовые промпты
 
 ```
 product-plan/prompts/
-├── one-shot-prompt.md     # Prompt for full implementation
-└── section-prompt.md      # Prompt template for section-by-section
+├── one-shot-prompt.md     # Промпт для полной реализации
+└── section-prompt.md      # Шаблон промпта для поэтапной работы
 ```
 
-These are pre-written prompts you copy/paste into your coding agent. They reference the instruction files and prompt your agent to ask important clarifying questions about authentication, user modeling, and tech stack before implementing.
+Это готовые промпты, которые вы копируете в своего кодинг-агента. Они ссылаются на инструкции и побуждают агента задать важные уточняющие вопросы про аутентификацию, модель пользователей и техстек перед началом реализации.
 
-### Instructions
+### Инструкции
 
 ```
 product-plan/
-├── product-overview.md              # Product summary (always provide)
+├── product-overview.md              # Сводка продукта (всегда прикладывать)
 └── instructions/
-    ├── one-shot-instructions.md     # All milestones combined
-    └── incremental/                 # Milestone-by-milestone implementation
-        ├── 01-foundation.md         # Design tokens, data model, routing
-        ├── 02-shell.md              # Application shell implementation
-        ├── 03-[section-id].md        # One per section (e.g., 03-invoices.md)
+    ├── one-shot-instructions.md     # Все этапы в одном документе
+    └── incremental/                 # Реализация по этапам
+        ├── 01-foundation.md         # Дизайн-токены, модель данных, маршрутизация
+        ├── 02-shell.md              # Реализация оболочки приложения
+        ├── 03-[section-id].md        # По одному на раздел (например, 03-invoices.md)
         └── ...
 ```
 
-**product-overview.md** provides context about the full product—always include it with any implementation session.
+**product-overview.md** дает контекст по всему продукту — всегда включайте его в любой сеанс реализации.
 
-**one-shot-instructions.md** combines all milestones into a single document. Use this with `one-shot-prompt.md` for full implementation.
+**one-shot-instructions.md** объединяет все этапы в один документ. Используйте его вместе с `one-shot-prompt.md` для полной реализации.
 
-**Incremental instructions** break the work into milestones. Use these with `section-prompt.md` for step-by-step implementation.
+**Пошаговые инструкции** разбивают работу на этапы. Используйте их вместе с `section-prompt.md` для поэтапной реализации.
 
-### Design System
+### Система дизайна
 
 ```
 product-plan/design-system/
-├── tokens.css           # CSS custom properties
-├── tailwind-colors.md   # Tailwind configuration guide
-└── fonts.md             # Google Fonts setup
+├── tokens.css           # CSS-переменные
+├── tailwind-colors.md   # Руководство по настройке Tailwind
+└── fonts.md             # Настройка Google Fonts
 ```
 
-### Data Model
+### Модель данных
 
 ```
 product-plan/data-model/
-├── README.md            # Entity descriptions
-├── types.ts             # TypeScript interfaces
-└── sample-data.json     # Combined sample data
+├── README.md            # Описания сущностей
+├── types.ts             # Интерфейсы TypeScript
+└── sample-data.json     # Сводные примерные данные
 ```
 
-### Shell Components
+### Компоненты оболочки
 
 ```
 product-plan/shell/
-├── README.md            # Design intent
+├── README.md            # Замысел дизайна
 ├── components/
-│   ├── AppShell.tsx     # Main layout wrapper
-│   ├── MainNav.tsx      # Navigation
-│   ├── UserMenu.tsx     # User menu
-│   └── index.ts         # Exports
-└── screenshot.png       # Visual reference (if captured)
+│   ├── AppShell.tsx     # Основная обертка макета
+│   ├── MainNav.tsx      # Навигация
+│   ├── UserMenu.tsx     # Меню пользователя
+│   └── index.ts         # Экспорты
+└── screenshot.png       # Визуальный референс (если снят)
 ```
 
-### Section Components
+### Компоненты раздела
 
-For each section:
+Для каждого раздела:
 
 ```
 product-plan/sections/[section-id]/
-├── README.md            # Feature overview, user flows
-├── tests.md             # Test-writing instructions (TDD)
+├── README.md            # Обзор функции, пользовательские сценарии
+├── tests.md             # Инструкции по тестам (TDD)
 ├── components/
-│   ├── [Component].tsx  # Exportable components
-│   └── index.ts         # Exports
-├── types.ts             # TypeScript interfaces
-├── sample-data.json     # Test data
-└── screenshot.png       # Visual reference (if captured)
+│   ├── [Component].tsx  # Экспортируемые компоненты
+│   └── index.ts         # Экспорты
+├── types.ts             # Интерфейсы TypeScript
+├── sample-data.json     # Тестовые данные
+└── screenshot.png       # Визуальный референс (если снят)
 ```
 
-### Test Instructions
+### Инструкции по тестам
 
-Each section includes a `tests.md` file with framework-agnostic test-writing instructions:
+Каждый раздел включает файл `tests.md` с независимыми от фреймворка инструкциями по написанию тестов:
 
-- **User flow tests** — Success and failure paths for key interactions
-- **Empty state tests** — Verifying UI when no records exist
-- **Component interaction tests** — Specific UI elements and behaviors to verify
+- **Тесты пользовательских сценариев** — успешные и неуспешные пути ключевых взаимодействий
+- **Тесты пустых состояний** — проверка UI, когда нет записей
+- **Тесты взаимодействия компонентов** — конкретные элементы и поведения для проверки
 
-These instructions describe WHAT to test, not HOW—your coding agent adapts them to your test framework (Jest, Vitest, Playwright, Cypress, RSpec, Minitest, PHPUnit, etc.).
+Эти инструкции описывают ЧТО тестировать, а не КАК — ваш агент адаптирует их под ваш фреймворк (Jest, Vitest, Playwright, Cypress, RSpec, Minitest, PHPUnit и т.д.).
 
-## About the Components
+## О компонентах
 
-Exported components are:
+Экспортированные компоненты:
 
-- **Props-based** — Accept data and callbacks via props, never import data directly
-- **Portable** — Work with any React setup, no Design OS dependencies
-- **Complete** — Full styling, responsive design, dark mode support
-- **Production-ready** — Not prototypes or mockups
+- **На props** — принимают данные и коллбеки через props, не импортируют данные напрямую
+- **Переносимые** — работают с любым React-стеком без зависимостей на Design OS
+- **Полные** — полноценная стилизация, адаптивность, поддержка темной темы
+- **Готовые к продакшену** — не прототипы и не макеты
 
 ```tsx
-// Components expect data and callbacks as props
+// Компоненты ожидают данные и коллбеки через props
 <InvoiceList
   invoices={data}
   onView={(id) => navigate(`/invoices/${id}`)}
@@ -136,14 +136,14 @@ Exported components are:
 />
 ```
 
-Your implementation agent's job is to:
-- Wire up callbacks to routing and API calls
-- Replace sample data with real data from your backend
-- Implement proper error handling and loading states
-- Implement empty states when no records exist (first-time users, after deletions)
-- Build the backend APIs the components need
-- Write tests based on the provided test instructions (TDD approach)
+Задачи агента реализации:
+- Подключить коллбеки к маршрутизации и API-вызовам
+- Заменить примерные данные реальными данными из бэкенда
+- Реализовать корректную обработку ошибок и состояния загрузки
+- Реализовать пустые состояния при отсутствии записей (новые пользователи, после удаления)
+- Построить необходимые бэкенд-API для компонентов
+- Написать тесты по предоставленным инструкциям (подход TDD)
 
-## Using the Export
+## Использование экспорта
 
-See [Codebase Implementation](codebase-implementation.md) for detailed guidance on implementing your design in your codebase.
+Подробные инструкции по внедрению дизайна в вашу кодовую базу — в [Внедрение в кодовую базу](codebase-implementation.md).
