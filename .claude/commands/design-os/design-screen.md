@@ -1,97 +1,97 @@
 # Design Screen
 
-You are helping the user create a screen design for a section of their product. The screen design will be a props-based React component that can be exported and integrated into any React codebase.
+Вы помогаете пользователю создать дизайн экрана для секции его продукта. Дизайн экрана будет компонентом React на основе пропсов, который можно экспортировать и интегрировать в любую кодовую базу React.
 
 ## Step 1: Check Prerequisites
 
-First, identify the target section and verify that `spec.md`, `data.json`, and `types.ts` all exist.
+Сначала определите целевую секцию и проверьте, что существуют `spec.md`, `data.json` и `types.ts`.
 
-Read `/product/product-roadmap.md` to get the list of available sections.
+Прочитайте `/product/product-roadmap.md`, чтобы получить список доступных секций.
 
-If there's only one section, auto-select it. If there are multiple sections, use the AskUserQuestion tool to ask which section the user wants to create a screen design for.
+Если есть только одна секция, автоматически выберите её. Если секций несколько, используйте инструмент AskUserQuestion, чтобы спросить, для какой секции пользователь хочет создать дизайн экрана.
 
-Then verify all required files exist:
+Затем проверьте, что все необходимые файлы существуют:
 
 - `product/sections/[section-id]/spec.md`
 - `product/sections/[section-id]/data.json`
 - `product/sections/[section-id]/types.ts`
 
-If spec.md doesn't exist:
+Если spec.md не существует:
 
-"I don't see a specification for **[Section Title]** yet. Please run `/shape-section` first to define the section's requirements."
+"Я не вижу спецификации для **[Section Title]** пока. Пожалуйста, сначала запустите `/shape-section` для определения требований секции."
 
-If data.json or types.ts don't exist:
+Если data.json или types.ts не существуют:
 
-"I don't see sample data for **[Section Title]** yet. Please run `/sample-data` first to create sample data and types for the screen designs."
+"Я не вижу примерных данных для **[Section Title]** пока. Пожалуйста, сначала запустите `/sample-data` для создания примерных данных и типов для дизайнов экранов."
 
-Stop here if any file is missing.
+Остановитесь здесь, если какой-либо файл отсутствует.
 
 ## Step 2: Check for Design System and Shell
 
-Check for optional enhancements:
+Проверьте наличие дополнительных улучшений:
 
 **Design Tokens:**
-- Check if `/product/design-system/colors.json` exists
-- Check if `/product/design-system/typography.json` exists
+- Проверьте, существует ли `/product/design-system/colors.json`
+- Проверьте, существует ли `/product/design-system/typography.json`
 
-If design tokens exist, read them and use them for styling. If they don't exist, show a warning:
+Если токены дизайна существуют, прочитайте их и используйте для стилизации. Если их нет, покажите предупреждение:
 
-"Note: Design tokens haven't been defined yet. I'll use default styling, but for consistent branding, consider running `/design-tokens` first."
+"Примечание: Токены дизайна еще не определены. Я буду использовать стили по умолчанию, но для согласованного брендинга рассмотрите сначала запуск `/design-tokens`."
 
 **Shell:**
-- Check if `src/shell/components/AppShell.tsx` exists
+- Проверьте, существует ли `src/shell/components/AppShell.tsx`
 
-If shell exists, the screen design will render inside the shell in Design OS. If not, show a warning:
+Если shell существует, дизайн экрана будет отображаться внутри shell в Design OS. Если нет, покажите предупреждение:
 
-"Note: An application shell hasn't been designed yet. The screen design will render standalone. Consider running `/design-shell` first to see section screen designs in the full app context."
+"Примечание: Оболочка приложения еще не спроектирована. Дизайн экрана будет отображаться отдельно. Рассмотрите сначала запуск `/design-shell`, чтобы увидеть дизайны экранов секций в полном контексте приложения."
 
 ## Step 3: Analyze Requirements
 
-Read and analyze all three files:
+Прочитайте и проанализируйте все три файла:
 
-1. **spec.md** - Understand the user flows and UI requirements
-2. **data.json** - Understand the data structure and sample content
-3. **types.ts** - Understand the TypeScript interfaces and available callbacks
+1. **spec.md** - Поймите пользовательские потоки и требования к UI
+2. **data.json** - Поймите структуру данных и примерный контент
+3. **types.ts** - Поймите интерфейсы TypeScript и доступные колбэки
 
-Identify what views are needed based on the spec. Common patterns:
+Определите, какие представления нужны на основе спецификации. Общие паттерны:
 
-- List/dashboard view (showing multiple items)
-- Detail view (showing a single item)
-- Form/create view (for adding/editing)
+- Представление списка/дашборда (показывает несколько элементов)
+- Представление деталей (показывает один элемент)
+- Представление формы/создания (для добавления/редактирования)
 
 ## Step 4: Clarify the Screen Design Scope
 
-If the spec implies multiple views, use the AskUserQuestion tool to confirm which view to build first:
+Если спецификация подразумевает несколько представлений, используйте инструмент AskUserQuestion, чтобы подтвердить, какое представление строить первым:
 
-"The specification suggests a few different views for **[Section Title]**:
+"Спецификация предполагает несколько разных представлений для **[Section Title]**:
 
-1. **[View 1]** - [Brief description]
-2. **[View 2]** - [Brief description]
+1. **[View 1]** - [Краткое описание]
+2. **[View 2]** - [Краткое описание]
 
-Which view should I create first?"
+Какое представление мне создать первым?"
 
-If there's only one obvious view, proceed directly.
+Если есть только одно очевидное представление, продолжайте напрямую.
 
 ## Step 5: Invoke the Frontend Design Skill
 
-Before creating the screen design, read the `frontend-design` skill to ensure high-quality design output.
+Перед созданием дизайна экрана прочитайте навык `frontend-design`, чтобы обеспечить высококачественный дизайн.
 
-Read the file at `.claude/skills/frontend-design/SKILL.md` and follow its guidance for creating distinctive, production-grade interfaces.
+Прочитайте файл `.claude/skills/frontend-design/SKILL.md` и следуйте его рекомендациям для создания отличительных, производственных интерфейсов.
 
 ## Step 6: Create the Props-Based Component
 
-Create the main component file at `src/sections/[section-id]/components/[ViewName].tsx`.
+Создайте основной файл компонента в `src/sections/[section-id]/components/[ViewName].tsx`.
 
 ### Component Structure
 
-The component MUST:
+Компонент ДОЛЖЕН:
 
-- Import types from the types.ts file
-- Accept all data via props (never import data.json directly)
-- Accept callback props for all actions
-- Be fully self-contained and portable
+- Импортировать типы из файла types.ts
+- Принимать все данные через пропсы (никогда не импортировать data.json напрямую)
+- Принимать пропсы колбэков для всех действий
+- Быть полностью самодостаточным и портативным
 
-Example:
+Пример:
 
 ```tsx
 import type { InvoiceListProps } from '@/../product/sections/[section-id]/types'
@@ -126,48 +126,48 @@ export function InvoiceList({
 
 ### Design Requirements
 
-- **Mobile responsive:** Use Tailwind responsive prefixes (`sm:`, `md:`, `lg:`) and ensure the design layout works gracefully on mobile, tablet and desktop screen sizes.
-- **Light & dark mode:** Use `dark:` variants for all colors
-- **Use design tokens:** If defined, apply the product's color palette and typography
-- **Follow the frontend-design skill:** Create distinctive, memorable interfaces
+- **Адаптивность для мобильных:** Используйте адаптивные префиксы Tailwind (`sm:`, `md:`, `lg:`) и убедитесь, что макет дизайна работает плавно на мобильных, планшетах и настольных размерах экрана.
+- **Светлый и темный режим:** Используйте варианты `dark:` для всех цветов
+- **Используйте токены дизайна:** Если определены, применяйте цветовую палитру и типографику продукта
+- **Следуйте навыку frontend-design:** Создавайте отличительные, запоминающиеся интерфейсы
 
 ### Applying Design Tokens
 
-**If `/product/design-system/colors.json` exists:**
-- Use the primary color for buttons, links, and key accents
-- Use the secondary color for tags, highlights, secondary elements
-- Use the neutral color for backgrounds, text, and borders
-- Example: If primary is `lime`, use `lime-500`, `lime-600`, etc. for primary actions
+**Если `/product/design-system/colors.json` существует:**
+- Используйте основной цвет для кнопок, ссылок и ключевых акцентов
+- Используйте вторичный цвет для тегов, выделений, вторичных элементов
+- Используйте нейтральный цвет для фонов, текста и границ
+- Пример: Если основной цвет `lime`, используйте `lime-500`, `lime-600` и т.д. для основных действий
 
-**If `/product/design-system/typography.json` exists:**
-- Note the font choices for reference in comments
-- The fonts will be applied at the app level, but use appropriate font weights
+**Если `/product/design-system/typography.json` существует:**
+- Отметьте выбор шрифтов для справки в комментариях
+- Шрифты будут применены на уровне приложения, но используйте соответствующие веса шрифтов
 
-**If design tokens don't exist:**
-- Fall back to `stone` for neutrals and `lime` for accents (Design OS defaults)
+**Если токены дизайна не существуют:**
+- Используйте `stone` для нейтральных и `lime` для акцентов (значения по умолчанию Design OS)
 
 ### What to Include
 
-- Implement ALL user flows and UI requirements from the spec
-- Use the prop data (not hardcoded values)
-- Include realistic UI states (hover, active, etc.)
-- Use the callback props for all interactive elements
-- Handle optional callbacks with optional chaining: `onClick={() => onDelete?.(id)}`
+- Реализуйте ВСЕ пользовательские потоки и требования к UI из спецификации
+- Используйте данные пропсов (не жестко закодированные значения)
+- Включите реалистичные состояния UI (hover, active и т.д.)
+- Используйте пропсы колбэков для всех интерактивных элементов
+- Обрабатывайте опциональные колбэки с опциональной цепочкой: `onClick={() => onDelete?.(id)}`
 
 ### What NOT to Include
 
-- No `import data from` statements - data comes via props
-- No features not specified in the spec
-- No routing logic - callbacks handle navigation intent
-- No navigation elements (shell handles navigation)
+- Никаких операторов `import data from` - данные приходят через пропсы
+- Никаких функций, не указанных в спецификации
+- Никакой логики маршрутизации - колбэки обрабатывают намерение навигации
+- Никаких элементов навигации (shell обрабатывает навигацию)
 
 ## Step 7: Create Sub-Components (If Needed)
 
-For complex views, break down into sub-components. Each sub-component should also be props-based.
+Для сложных представлений разбейте на подкомпоненты. Каждый подкомпонент также должен быть на основе пропсов.
 
-Create sub-components at `src/sections/[section-id]/components/[SubComponent].tsx`.
+Создайте подкомпоненты в `src/sections/[section-id]/components/[SubComponent].tsx`.
 
-Example:
+Пример:
 
 ```tsx
 import type { Invoice } from '@/../product/sections/[section-id]/types'
@@ -196,7 +196,7 @@ export function InvoiceRow({ invoice, onView, onEdit, onDelete }: InvoiceRowProp
 }
 ```
 
-Then import and use in the main component:
+Затем импортируйте и используйте в основном компоненте:
 
 ```tsx
 import { InvoiceRow } from './InvoiceRow'
@@ -220,11 +220,11 @@ export function InvoiceList({ invoices, onView, onEdit, onDelete }: InvoiceListP
 
 ## Step 8: Create the Preview Wrapper
 
-Create a preview wrapper at `src/sections/[section-id]/[ViewName].tsx` (note: this is in the section root, not in components/).
+Создайте обертку предпросмотра в `src/sections/[section-id]/[ViewName].tsx` (примечание: это в корне секции, а не в components/).
 
-This wrapper is what Design OS renders. It imports the sample data and feeds it to the props-based component.
+Эта обертка - это то, что отображает Design OS. Она импортирует примерные данные и передает их в компонент на основе пропсов.
 
-Example:
+Пример:
 
 ```tsx
 import data from '@/../product/sections/[section-id]/data.json'
@@ -243,20 +243,20 @@ export default function InvoiceListPreview() {
 }
 ```
 
-The preview wrapper:
+Обертка предпросмотра:
 
-- Has a `default` export (required for Design OS routing)
-- Imports sample data from data.json
-- Passes data to the component via props
-- Provides console.log handlers for callbacks (for testing interactions)
-- Is NOT exported to the user's codebase - it's only for Design OS
-- **Will render inside the shell** if one has been designed
+- Имеет экспорт `default` (требуется для маршрутизации Design OS)
+- Импортирует примерные данные из data.json
+- Передает данные в компонент через пропсы
+- Предоставляет обработчики console.log для колбэков (для тестирования взаимодействий)
+- НЕ экспортируется в кодовую базу пользователя - только для Design OS
+- **Будет отображаться внутри shell**, если он был спроектирован
 
 ## Step 9: Create Component Index
 
-Create an index file at `src/sections/[section-id]/components/index.ts` to cleanly export all components.
+Создайте индексный файл в `src/sections/[section-id]/components/index.ts` для чистого экспорта всех компонентов.
 
-Example:
+Пример:
 
 ```tsx
 export { InvoiceList } from './InvoiceList'
@@ -266,44 +266,44 @@ export { InvoiceRow } from './InvoiceRow'
 
 ## Step 10: Confirm and Next Steps
 
-Let the user know:
+Сообщите пользователю:
 
-"I've created the screen design for **[Section Title]**:
+"Я создал дизайн экрана для **[Section Title]**:
 
-**Exportable components** (props-based, portable):
+**Экспортируемые компоненты** (на основе пропсов, портативные):
 
 - `src/sections/[section-id]/components/[ViewName].tsx`
-- `src/sections/[section-id]/components/[SubComponent].tsx` (if created)
+- `src/sections/[section-id]/components/[SubComponent].tsx` (если создан)
 - `src/sections/[section-id]/components/index.ts`
 
-**Preview wrapper** (for Design OS only):
+**Обертка предпросмотра** (только для Design OS):
 
 - `src/sections/[section-id]/[ViewName].tsx`
 
-**Important:** Restart your dev server to see the changes.
+**Важно:** Перезапустите ваш dev server, чтобы увидеть изменения.
 
-[If shell exists]: The screen design will render inside your application shell, showing the full app experience.
+[Если shell существует]: Дизайн экрана будет отображаться внутри оболочки вашего приложения, показывая полный опыт приложения.
 
-[If design tokens exist]: I've applied your color palette ([primary], [secondary], [neutral]) and typography choices.
+[Если токены дизайна существуют]: Я применил вашу цветовую палитру ([primary], [secondary], [neutral]) и выбор типографики.
 
-**Next steps:**
+**Следующие шаги:**
 
-- Run `/screenshot-design` to capture a screenshot of this screen design for documentation
-- If the spec calls for additional views, run `/design-screen` again to create them
-- When all sections are complete, run `/export-product` to generate the complete export package"
+- Запустите `/screenshot-design` для захвата скриншота этого дизайна экрана для документации
+- Если спецификация требует дополнительных представлений, запустите `/design-screen` снова для их создания
+- Когда все секции завершены, запустите `/export-product` для генерации полного пакета экспорта"
 
-If the spec indicates additional views are needed:
+Если спецификация указывает, что нужны дополнительные представления:
 
-"The specification also calls for [other view(s)]. Run `/design-screen` again to create those, then `/screenshot-design` to capture each one."
+"Спецификация также требует [другие представления]. Запустите `/design-screen` снова для их создания, затем `/screenshot-design` для захвата каждого."
 
 ## Important Notes
 
-- ALWAYS read the `frontend-design` skill before creating screen designs
-- Components MUST be props-based - never import data.json in exportable components
-- The preview wrapper is the ONLY file that imports data.json
-- Use TypeScript interfaces from types.ts for all props
-- Callbacks should be optional (use `?`) and called with optional chaining (`?.`)
-- Always remind the user to restart the dev server after creating files
-- Sub-components should also be props-based for maximum portability
-- Apply design tokens when available for consistent branding
-- Screen designs render inside the shell when viewed in Design OS (if shell exists)
+- ВСЕГДА читайте навык `frontend-design` перед созданием дизайнов экранов
+- Компоненты ДОЛЖНЫ быть на основе пропсов - никогда не импортируйте data.json в экспортируемых компонентах
+- Обертка предпросмотра - ЕДИНСТВЕННЫЙ файл, который импортирует data.json
+- Используйте интерфейсы TypeScript из types.ts для всех пропсов
+- Колбэки должны быть опциональными (используйте `?`) и вызываться с опциональной цепочкой (`?.`)
+- Всегда напоминайте пользователю перезапустить dev server после создания файлов
+- Подкомпоненты также должны быть на основе пропсов для максимальной портативности
+- Применяйте токены дизайна, когда доступны, для согласованного брендинга
+- Дизайны экранов отображаются внутри shell при просмотре в Design OS (если shell существует)

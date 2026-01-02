@@ -1,138 +1,138 @@
 # Shape Section
 
-You are helping the user define the specification for a section of their product. This is a conversational process to establish the scope of functionality, user flows, and UI requirements.
+Вы помогаете пользователю определить спецификацию для секции его продукта. Это разговорный процесс для установления области функциональности, пользовательских потоков и требований к UI.
 
 ## Step 1: Check Prerequisites
 
-First, verify that `/product/product-roadmap.md` exists. If it doesn't:
+Сначала проверьте, что существует `/product/product-roadmap.md`. Если его нет:
 
-"I don't see a product roadmap defined yet. Please run `/product-roadmap` first to define your product sections, then come back to shape individual sections."
+"Я не вижу определённой дорожной карты продукта пока. Пожалуйста, сначала запустите `/product-roadmap` для определения секций вашего продукта, затем вернитесь для формирования отдельных секций."
 
-Stop here if the roadmap doesn't exist.
+Остановитесь здесь, если дорожная карта не существует.
 
 ## Step 2: Identify the Target Section
 
-Read `/product/product-roadmap.md` to get the list of available sections.
+Прочитайте `/product/product-roadmap.md`, чтобы получить список доступных секций.
 
-If there's only one section, auto-select it. If there are multiple sections, use the AskUserQuestion tool to ask which section the user wants to work on:
+Если есть только одна секция, автоматически выберите её. Если секций несколько, используйте инструмент AskUserQuestion, чтобы спросить, над какой секцией пользователь хочет работать:
 
-"Which section would you like to define the specification for?"
+"Для какой секции вы хотели бы определить спецификацию?"
 
-Present the available sections as options.
+Представьте доступные секции как варианты.
 
 ## Step 3: Gather Initial Input
 
-Once the section is identified, invite the user to share any initial thoughts:
+Как только секция определена, пригласите пользователя поделиться любыми первоначальными мыслями:
 
-"Let's define the scope and requirements for **[Section Title]**.
+"Давайте определим область и требования для **[Section Title]**.
 
-Do you have any notes or ideas about what this section should include? Share any thoughts about the features, user flows, or UI patterns you're envisioning. If you're not sure yet, we can start with questions."
+Есть ли у вас какие-либо заметки или идеи о том, что должна включать эта секция? Поделитесь любыми мыслями о функциях, пользовательских потоках или паттернах UI, которые вы представляете. Если вы пока не уверены, мы можем начать с вопросов."
 
-Wait for their response. The user may provide raw notes or ask to proceed with questions.
+Дождитесь их ответа. Пользователь может предоставить сырые заметки или попросить продолжить с вопросами.
 
 ## Step 4: Ask Clarifying Questions
 
-Use the AskUserQuestion tool to ask 4-6 targeted questions to define:
+Используйте инструмент AskUserQuestion, чтобы задать 4-6 целевых вопросов для определения:
 
-- **Main user actions/tasks** - What can users do in this section?
-- **Information to display** - What data and content needs to be shown?
-- **Key user flows** - What are the step-by-step interactions?
-- **UI patterns** - Any specific interactions, layouts, or components needed?
-- **Scope boundaries** - What should be explicitly excluded?
+- **Основных действий/задач пользователя** - Что пользователи могут делать в этой секции?
+- **Информации для отображения** - Какие данные и контент нужно показать?
+- **Ключевых пользовательских потоков** - Каковы пошаговые взаимодействия?
+- **Паттернов UI** - Нужны ли какие-либо конкретные взаимодействия, макеты или компоненты?
+- **Границ области** - Что должно быть явно исключено?
 
-Example questions (adapt based on their input and the section):
-- "What are the main actions a user can take in this section?"
-- "What information needs to be displayed on the primary view?"
-- "Walk me through the main user flow - what happens step by step?"
-- "Are there any specific UI patterns you want to use (e.g., tables, cards, modals)?"
-- "What's intentionally out of scope for this section?"
-- "Are there multiple views needed (e.g., list view and detail view)?"
+Примеры вопросов (адаптируйте на основе их ввода и секции):
+- "Каковы основные действия, которые пользователь может выполнить в этой секции?"
+- "Какая информация должна отображаться на основном представлении?"
+- "Проведите меня через основной пользовательский поток - что происходит шаг за шагом?"
+- "Есть ли какие-либо конкретные паттерны UI, которые вы хотите использовать (например, таблицы, карточки, модальные окна)?"
+- "Что намеренно выходит за рамки этой секции?"
+- "Нужны ли несколько представлений (например, представление списка и представление деталей)?"
 
-Ask questions one or two at a time, conversationally. Focus on user experience and interface requirements - no backend or database details.
+Задавайте вопросы по одному или два за раз, разговорно. Фокусируйтесь на пользовательском опыте и требованиях к интерфейсу - никаких деталей бэкенда или базы данных.
 
 ## Step 5: Ask About Shell Configuration
 
-If a shell design has been created for this project (check if `/src/shell/components/AppShell.tsx` exists), ask the user about shell usage:
+Если для этого проекта был создан дизайн shell (проверьте, существует ли `/src/shell/components/AppShell.tsx`), спросите пользователя об использовании shell:
 
-"Should this section's screen designs be displayed **inside the app shell** (with navigation header), or should they be **standalone pages** (without the shell)?
+"Должны ли дизайны экранов этой секции отображаться **внутри оболочки приложения** (с заголовком навигации) или они должны быть **автономными страницами** (без shell)?
 
-Most sections use the app shell, but some pages like public-facing views, landing pages, or embedded widgets should be standalone."
+Большинство секций используют оболочку приложения, но некоторые страницы, такие как публичные представления, целевые страницы или встроенные виджеты, должны быть автономными."
 
-Use AskUserQuestion with options:
-- "Inside app shell" - The default for most in-app sections
-- "Standalone (no shell)" - For public pages, landing pages, or embeds
+Используйте AskUserQuestion с вариантами:
+- "Внутри оболочки приложения" - По умолчанию для большинства внутриприложенных секций
+- "Автономно (без shell)" - Для публичных страниц, целевых страниц или встраиваний
 
-If no shell design exists yet, skip this question and default to using the shell.
+Если дизайн shell еще не существует, пропустите этот вопрос и по умолчанию используйте shell.
 
 ## Step 6: Present Draft and Refine
 
-Once you have enough information, present a draft specification:
+Как только у вас будет достаточно информации, представьте черновик спецификации:
 
-"Based on our discussion, here's the specification for **[Section Title]**:
+"Основываясь на нашем обсуждении, вот спецификация для **[Section Title]**:
 
-**Overview:**
-[2-3 sentence summary of what this section does]
+**Обзор:**
+[Резюме в 2-3 предложения о том, что делает эта секция]
 
-**User Flows:**
+**Пользовательские потоки:**
 - [Flow 1]
 - [Flow 2]
 - [Flow 3]
 
-**UI Requirements:**
+**Требования к UI:**
 - [Requirement 1]
 - [Requirement 2]
 - [Requirement 3]
 
-**Display:** [Inside app shell / Standalone]
+**Отображение:** [Внутри оболочки приложения / Автономно]
 
-Does this capture everything? Would you like to adjust anything?"
+Охватывает ли это всё? Хотели бы вы что-нибудь скорректировать?"
 
-Iterate until the user is satisfied. Don't add features that weren't discussed. Don't leave out features that were discussed.
+Итерируйте, пока пользователь не будет удовлетворен. Не добавляйте функции, которые не обсуждались. Не пропускайте функции, которые обсуждались.
 
 ## Step 7: Create the Spec File
 
-Once the user approves, create the file at `product/sections/[section-id]/spec.md` with this exact format:
+После одобрения пользователем создайте файл по адресу `product/sections/[section-id]/spec.md` в следующем точном формате:
 
 ```markdown
 # [Section Title] Specification
 
 ## Overview
-[The finalized 2-3 sentence description]
+[Финализированное описание в 2-3 предложения]
 
 ## User Flows
 - [Flow 1]
 - [Flow 2]
 - [Flow 3]
-[Add all flows discussed]
+[Добавьте все обсужденные потоки]
 
 ## UI Requirements
 - [Requirement 1]
 - [Requirement 2]
 - [Requirement 3]
-[Add all requirements discussed]
+[Добавьте все обсужденные требования]
 
 ## Configuration
 - shell: [true/false]
 ```
 
-**Important:**
-- Set `shell: true` if the section should display inside the app shell (this is the default)
-- Set `shell: false` if the section should display as a standalone page without the shell
+**Важно:**
+- Установите `shell: true`, если секция должна отображаться внутри оболочки приложения (это по умолчанию)
+- Установите `shell: false`, если секция должна отображаться как автономная страница без shell
 
-The section-id is the slug version of the section title (lowercase, hyphens instead of spaces).
+section-id - это slug-версия названия секции (нижний регистр, дефисы вместо пробелов).
 
 ## Step 8: Confirm and Next Steps
 
-Let the user know:
+Сообщите пользователю:
 
-"I've created the specification at `product/sections/[section-id]/spec.md`.
+"Я создал спецификацию в `product/sections/[section-id]/spec.md`.
 
-You can review the spec on the section page. When you're ready, run `/sample-data` to create sample data for this section."
+Вы можете просмотреть спецификацию на странице секции. Когда будете готовы, запустите `/sample-data` для создания примерных данных для этой секции."
 
 ## Important Notes
 
-- Be conversational and helpful, not robotic
-- Ask follow-up questions when answers are vague
-- Focus on UX and UI - don't discuss backend, database, or API details
-- Keep the spec concise - only include what was discussed, no bloat
-- The format must match exactly for the app to parse it correctly
+- Будьте разговорными и полезными, не роботизированными
+- Задавайте дополнительные вопросы, когда ответы расплывчаты
+- Фокусируйтесь на UX и UI - не обсуждайте детали бэкенда, базы данных или API
+- Держите спецификацию краткой - включайте только то, что обсуждалось, без лишнего
+- Формат должен точно соответствовать для правильного парсинга приложением

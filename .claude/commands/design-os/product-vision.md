@@ -1,99 +1,99 @@
 # Product Vision
 
-You are helping the user define their product vision for Design OS. This is a conversational, multi-step process.
+Вы помогаете пользователю определить видение его продукта для Design OS. Это разговорный многошаговый процесс.
 
 ## Step 1: Gather Initial Input
 
-First, ask the user to share their raw notes, ideas, or thoughts about the product they want to build. Be warm and open-ended:
+Сначала попросите пользователя поделиться его сырыми заметками, идеями или мыслями о продукте, который он хочет построить. Будьте теплыми и открытыми:
 
-"I'd love to help you define your product vision. Tell me about the product you're building - share any notes, ideas, or rough thoughts you have. What problem are you trying to solve? Who is it for? Don't worry about structure yet, just share what's on your mind."
+"Я был бы рад помочь вам определить видение вашего продукта. Расскажите мне о продукте, который вы строите - поделитесь любыми заметками, идеями или грубыми мыслями, которые у вас есть. Какую проблему вы пытаетесь решить? Для кого это? Пока не беспокойтесь о структуре, просто поделитесь тем, что у вас на уме."
 
-Wait for their response before proceeding.
+Дождитесь их ответа перед продолжением.
 
 ## Step 2: Ask Clarifying Questions
 
-After receiving their input, use the AskUserQuestion tool to ask 3-5 targeted questions to help shape:
+После получения их ввода используйте инструмент AskUserQuestion, чтобы задать 3-5 целевых вопросов для формирования:
 
-- **The product name** - A clear, concise name for the product
-- **The core product description** (1-3 sentences that capture the essence)
-- **The key problems** the product solves (1-5 specific pain points)
-- **How the product solves each problem** (concrete solutions)
-- **The main features** that make this possible
+- **Название продукта** - Четкое, краткое название продукта
+- **Основное описание продукта** (1-3 предложения, которые передают суть)
+- **Ключевые проблемы**, которые решает продукт (1-5 конкретных болевых точек)
+- **Как продукт решает каждую проблему** (конкретные решения)
+- **Основные функции**, которые делают это возможным
 
-**Important:** If the user hasn't already provided a product name, ask them:
-- "What would you like to call this product? (A short, memorable name)"
+**Важно:** Если пользователь еще не предоставил название продукта, спросите их:
+- "Как бы вы хотели назвать этот продукт? (Короткое, запоминающееся название)"
 
-Other example clarifying questions (adapt based on their input):
-- "Who is the primary user of this product? Can you describe them?"
-- "What's the single biggest pain point you're addressing?"
-- "How do people currently solve this problem without your product?"
-- "What makes your approach different or better?"
-- "What are the 3-5 most essential features?"
+Другие примеры уточняющих вопросов (адаптируйте на основе их ввода):
+- "Кто является основным пользователем этого продукта? Можете описать их?"
+- "Какая единственная самая большая болевая точка, которую вы решаете?"
+- "Как люди в настоящее время решают эту проблему без вашего продукта?"
+- "Что делает ваш подход отличным или лучшим?"
+- "Каковы 3-5 самых важных функций?"
 
-Ask questions one or two at a time, and engage conversationally.
+Задавайте вопросы по одному или два за раз, вовлекайтесь в разговор.
 
 ## Step 3: Present Draft and Refine
 
-Once you have enough information, present a draft summary:
+Как только у вас будет достаточно информации, представьте черновик резюме:
 
-"Based on our discussion, here's what I'm capturing for **[Product Name]**:
+"Основываясь на нашем обсуждении, вот что я фиксирую для **[Product Name]**:
 
-**Description:**
-[Draft 1-3 sentence description]
+**Описание:**
+[Черновик описания в 1-3 предложения]
 
-**Problems & Solutions:**
-1. [Problem] → [Solution]
-2. [Problem] → [Solution]
+**Проблемы и решения:**
+1. [Проблема] → [Решение]
+2. [Проблема] → [Решение]
 
-**Key Features:**
-- Feature 1
-- Feature 2
-- Feature 3
+**Ключевые функции:**
+- Функция 1
+- Функция 2
+- Функция 3
 
-Does this capture your vision? Would you like to adjust anything?"
+Отражает ли это ваше видение? Хотели бы вы что-нибудь скорректировать?"
 
-Iterate until the user is satisfied.
+Итерируйте, пока пользователь не будет удовлетворен.
 
 ## Step 4: Create the File
 
-Once the user approves, create the file at `/product/product-overview.md` with this exact format:
+После одобрения пользователем создайте файл по адресу `/product/product-overview.md` в следующем точном формате:
 
 ```markdown
 # [Product Name]
 
 ## Description
-[The finalized 1-3 sentence description]
+[Финализированное описание в 1-3 предложения]
 
 ## Problems & Solutions
 
 ### Problem 1: [Problem Title]
-[How the product solves it in 1-2 sentences]
+[Как продукт решает это в 1-2 предложения]
 
 ### Problem 2: [Problem Title]
-[How the product solves it in 1-2 sentences]
+[Как продукт решает это в 1-2 предложения]
 
-[Add more as needed, up to 5]
+[Добавьте больше по мере необходимости, до 5]
 
 ## Key Features
 - [Feature 1]
 - [Feature 2]
 - [Feature 3]
-[Add more as needed]
+[Добавьте больше по мере необходимости]
 ```
 
-**Important:** The `# [Product Name]` heading at the top is required - this is what displays as the card title in the app.
+**Важно:** Заголовок `# [Product Name]` вверху обязателен - это то, что отображается как заголовок карточки в приложении.
 
 ## Step 5: Confirm Completion
 
-Let the user know:
+Сообщите пользователю:
 
-"I've created your product overview at `/product/product-overview.md`. The homepage will now display **[Product Name]** with your product vision. You can run `/product-roadmap` next to break this down into development sections."
+"Я создал обзор вашего продукта в `/product/product-overview.md`. На главной странице теперь будет отображаться **[Product Name]** с видением вашего продукта. Вы можете запустить `/product-roadmap` дальше, чтобы разбить это на секции разработки."
 
 ## Important Notes
 
-- Be conversational and helpful, not robotic
-- Ask follow-up questions when answers are vague
-- Help the user think through their product, don't just transcribe
-- Keep the final output concise and clear
-- The format must match exactly for the app to parse it correctly
-- **Always ensure the product has a name** - if user didn't provide one, ask for it
+- Будьте разговорными и полезными, не роботизированными
+- Задавайте дополнительные вопросы, когда ответы расплывчаты
+- Помогайте пользователю продумать его продукт, не просто транскрибируйте
+- Держите финальный вывод кратким и ясным
+- Формат должен точно соответствовать для правильного парсинга приложением
+- **Всегда убеждайтесь, что у продукта есть название** - если пользователь не предоставил его, спросите

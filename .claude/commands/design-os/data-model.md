@@ -1,77 +1,77 @@
 # Data Model
 
-You are helping the user define the core data model for their product. This establishes the "nouns" of the system — the entities and their relationships.
+Вы помогаете пользователю определить основную модель данных для его продукта. Это устанавливает «существительные» системы — сущности и их связи.
 
 ## Step 1: Check Prerequisites
 
-First, verify that the product overview and roadmap exist:
+Сначала проверьте, что обзор продукта и дорожная карта существуют:
 
-1. Read `/product/product-overview.md` to understand what the product does
-2. Read `/product/product-roadmap.md` to understand the planned sections
+1. Прочитайте `/product/product-overview.md`, чтобы понять, что делает продукт
+2. Прочитайте `/product/product-roadmap.md`, чтобы понять запланированные секции
 
-If either file is missing, let the user know:
+Если какой-либо файл отсутствует, сообщите пользователю:
 
-"Before defining your data model, you'll need to establish your product vision. Please run `/product-vision` first, then `/product-roadmap` to define your sections."
+"Перед определением модели данных вам нужно установить видение продукта. Пожалуйста, сначала запустите `/product-vision`, затем `/product-roadmap` для определения ваших секций."
 
-Stop here if prerequisites are missing.
+Остановитесь здесь, если предварительные условия отсутствуют.
 
 ## Step 2: Gather Initial Input
 
-Review the product overview and roadmap, then present your initial analysis:
+Просмотрите обзор продукта и дорожную карту, затем представьте ваш первоначальный анализ:
 
-"Based on your product vision and roadmap, I can see you're building **[Product Name]** with sections for [list sections].
+"Основываясь на вашем видении продукта и дорожной карте, я вижу, что вы создаете **[Product Name]** с секциями для [список секций].
 
-Let me help you define the core data model — the main "things" your app will work with.
+Позвольте мне помочь вам определить основную модель данных — главные «вещи», с которыми будет работать ваше приложение.
 
-Looking at your product, here are some entities I'm seeing:
+Глядя на ваш продукт, вот некоторые сущности, которые я вижу:
 
-- **[Entity 1]** — [Brief description based on product overview]
-- **[Entity 2]** — [Brief description based on sections]
-- **[Entity 3]** — [Brief description]
+- **[Entity 1]** — [Краткое описание на основе обзора продукта]
+- **[Entity 2]** — [Краткое описание на основе секций]
+- **[Entity 3]** — [Краткое описание]
 
-Does this capture the main things your app works with? What would you add, remove, or change?"
+Отражает ли это основные вещи, с которыми работает ваше приложение? Что бы вы добавили, удалили или изменили?"
 
-Wait for their response before proceeding.
+Дождитесь их ответа перед продолжением.
 
 ## Step 3: Refine Entities
 
-Use the AskUserQuestion tool to clarify:
+Используйте инструмент AskUserQuestion для уточнения:
 
-- "Are there any other core entities in your system that users will create, view, or manage?"
-- "For [Entity], what are the most important pieces of information it contains? (Don't need every field, just the key ones)"
-- "How do these entities relate to each other?"
+- "Есть ли другие основные сущности в вашей системе, которые пользователи будут создавать, просматривать или управлять ими?"
+- "Для [Entity], какая самая важная информация в ней содержится? (Не нужно каждое поле, только ключевые)"
+- "Как эти сущности связаны друг с другом?"
 
-Keep the conversation focused on:
-- **Entity names** — What are the main nouns?
-- **Plain-language descriptions** — What does each entity represent?
-- **Relationships** — How do entities connect to each other?
+Держите разговор сфокусированным на:
+- **Названиях сущностей** — Какие основные существительные?
+- **Описаниях простым языком** — Что представляет каждая сущность?
+- **Связях** — Как сущности соединяются друг с другом?
 
-**Important:** Do NOT define every field or database schema details. Keep it minimal and conceptual.
+**Важно:** НЕ определяйте каждое поле или детали схемы базы данных. Держите это минимальным и концептуальным.
 
 ## Step 4: Present Draft and Refine
 
-Once you have enough information, present a draft:
+Как только у вас будет достаточно информации, представьте черновик:
 
-"Here's your data model:
+"Вот ваша модель данных:
 
-**Entities:**
+**Сущности:**
 
-- **[Entity1]** — [Description]
-- **[Entity2]** — [Description]
+- **[Entity1]** — [Описание]
+- **[Entity2]** — [Описание]
 
-**Relationships:**
+**Связи:**
 
-- [Entity1] has many [Entity2]
-- [Entity2] belongs to [Entity1]
-- [Entity3] links [Entity1] and [Entity4]
+- [Entity1] имеет много [Entity2]
+- [Entity2] принадлежит [Entity1]
+- [Entity3] связывает [Entity1] и [Entity4]
 
-Does this look right? Any adjustments?"
+Выглядит правильно? Какие-нибудь корректировки?"
 
-Iterate until the user is satisfied.
+Итерируйте, пока пользователь не будет удовлетворен.
 
 ## Step 5: Create the File
 
-Once approved, create the file at `/product/data-model/data-model.md` with this format:
+После одобрения создайте файл по адресу `/product/data-model/data-model.md` в следующем формате:
 
 ```markdown
 # Data Model
@@ -79,44 +79,44 @@ Once approved, create the file at `/product/data-model/data-model.md` with this 
 ## Entities
 
 ### [EntityName]
-[Plain-language description of what this entity represents and its purpose in the system.]
+[Описание простым языком того, что представляет эта сущность и её назначение в системе.]
 
 ### [AnotherEntity]
-[Plain-language description.]
+[Описание простым языком.]
 
-[Add more entities as needed]
+[Добавьте больше сущностей по мере необходимости]
 
 ## Relationships
 
 - [Entity1] has many [Entity2]
 - [Entity2] belongs to [Entity1]
 - [Entity3] belongs to both [Entity1] and [Entity2]
-[Add more relationships as needed]
+[Добавьте больше связей по мере необходимости]
 ```
 
-**Important:** Keep descriptions minimal — focus on what each entity represents, not every field it contains. Leave room for the implementation agent to extend the model.
+**Важно:** Держите описания минимальными — фокусируйтесь на том, что представляет каждая сущность, а не на каждом поле, которое она содержит. Оставьте место для агента реализации, чтобы расширить модель.
 
 ## Step 6: Confirm Completion
 
-Let the user know:
+Сообщите пользователю:
 
-"I've created your data model at `/product/data-model/data-model.md`.
+"Я создал вашу модель данных в `/product/data-model/data-model.md`.
 
-**Entities defined:**
-- [List entities]
+**Определенные сущности:**
+- [Список сущностей]
 
-**Relationships:**
-- [List key relationships]
+**Связи:**
+- [Список ключевых связей]
 
-This provides a shared vocabulary that will be used when generating sample data for your sections. When you run `/sample-data`, it will reference this model to ensure consistency.
+Это обеспечивает общий словарь, который будет использоваться при генерации примерных данных для ваших секций. Когда вы запустите `/sample-data`, он будет ссылаться на эту модель для обеспечения согласованности.
 
-Next step: Run `/design-tokens` to choose your color palette and typography."
+Следующий шаг: Запустите `/design-tokens` для выбора цветовой палитры и типографики."
 
 ## Important Notes
 
-- Keep the data model **minimal** — entity names, descriptions, and relationships
-- Do NOT define detailed schemas, field types, or validation rules
-- Use plain language that a non-technical person could understand
-- Relationships should describe how entities connect conceptually
-- The implementation agent will extend this with additional fields as needed
-- Entity names should be singular (User, Invoice, Project — not Users, Invoices)
+- Держите модель данных **минимальной** — названия сущностей, описания и связи
+- НЕ определяйте детальные схемы, типы полей или правила валидации
+- Используйте простой язык, понятный нетехническому человеку
+- Связи должны описывать, как сущности соединяются концептуально
+- Агент реализации расширит это дополнительными полями по мере необходимости
+- Названия сущностей должны быть в единственном числе (User, Invoice, Project — не Users, Invoices)

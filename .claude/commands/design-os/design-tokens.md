@@ -1,106 +1,106 @@
 # Design Tokens
 
-You are helping the user choose colors and typography for their product. These design tokens will be used consistently across all screen designs and the application shell.
+Вы помогаете пользователю выбрать цвета и типографику для его продукта. Эти токены дизайна будут использоваться согласованно во всех дизайнах экранов и оболочке приложения.
 
 ## Step 1: Check Prerequisites
 
-First, verify that the product overview exists:
+Сначала проверьте, что существует обзор продукта:
 
-Read `/product/product-overview.md` to understand what the product is.
+Прочитайте `/product/product-overview.md`, чтобы понять, что представляет собой продукт.
 
-If it doesn't exist:
+Если его нет:
 
-"Before defining your design system, you'll need to establish your product vision. Please run `/product-vision` first."
+"Перед определением вашей системы дизайна вам нужно установить видение продукта. Пожалуйста, сначала запустите `/product-vision`."
 
-Stop here if the prerequisite is missing.
+Остановитесь здесь, если предварительное условие отсутствует.
 
 ## Step 2: Explain the Process
 
-"Let's define the visual identity for **[Product Name]**.
+"Давайте определим визуальную идентичность для **[Product Name]**.
 
-I'll help you choose:
-1. **Colors** — A primary accent, secondary accent, and neutral palette
-2. **Typography** — Fonts for headings, body text, and code
+Я помогу вам выбрать:
+1. **Цвета** — Основной акцент, вторичный акцент и нейтральная палитра
+2. **Типографика** — Шрифты для заголовков, основного текста и кода
 
-These will be applied consistently across all your screen designs and the application shell.
+Они будут применены согласованно во всех ваших дизайнах экранов и оболочке приложения.
 
-Do you have any existing brand colors or fonts in mind, or would you like suggestions?"
+Есть ли у вас какие-либо существующие фирменные цвета или шрифты, или вы хотели бы получить предложения?"
 
-Wait for their response.
+Дождитесь их ответа.
 
 ## Step 3: Choose Colors
 
-Help the user select from Tailwind's built-in color palette. Present options based on their product type:
+Помогите пользователю выбрать из встроенной цветовой палитры Tailwind. Представьте варианты на основе типа их продукта:
 
-"For colors, we'll pick from Tailwind's palette so they work seamlessly with your screen designs.
+"Для цветов мы выберем из палитры Tailwind, чтобы они работали бесшовно с вашими дизайнами экранов.
 
-**Primary color** (main accent, buttons, links):
-Common choices: `blue`, `indigo`, `violet`, `emerald`, `teal`, `amber`, `rose`, `lime`
+**Основной цвет** (главный акцент, кнопки, ссылки):
+Общие варианты: `blue`, `indigo`, `violet`, `emerald`, `teal`, `amber`, `rose`, `lime`
 
-**Secondary color** (complementary accent, tags, highlights):
-Should complement your primary — often a different hue or a neutral variation
+**Вторичный цвет** (дополнительный акцент, теги, выделения):
+Должен дополнять ваш основной — часто другой оттенок или нейтральная вариация
 
-**Neutral color** (backgrounds, text, borders):
-Options: `slate` (cool gray), `gray` (pure gray), `zinc` (slightly warm), `neutral`, `stone` (warm gray)
+**Нейтральный цвет** (фоны, текст, границы):
+Варианты: `slate` (холодный серый), `gray` (чистый серый), `zinc` (слегка теплый), `neutral`, `stone` (теплый серый)
 
-Based on [Product Name], I'd suggest:
-- **Primary:** [suggestion] — [why it fits]
-- **Secondary:** [suggestion] — [why it complements]
-- **Neutral:** [suggestion] — [why it works]
+Основываясь на [Product Name], я бы предложил:
+- **Основной:** [предложение] — [почему это подходит]
+- **Вторичный:** [предложение] — [почему это дополняет]
+- **Нейтральный:** [предложение] — [почему это работает]
 
-What feels right for your product?"
+Что кажется правильным для вашего продукта?"
 
-Use AskUserQuestion to gather their preferences if they're unsure:
+Используйте AskUserQuestion для сбора их предпочтений, если они не уверены:
 
-- "What vibe are you going for? Professional, playful, modern, minimal?"
-- "Any colors you definitely want to avoid?"
-- "Light mode, dark mode, or both?"
+- "Какую атмосферу вы хотите создать? Профессиональную, игривую, современную, минималистичную?"
+- "Есть ли цвета, которых вы определенно хотите избежать?"
+- "Светлый режим, темный режим или оба?"
 
 ## Step 4: Choose Typography
 
-Help the user select Google Fonts:
+Помогите пользователю выбрать Google Fonts:
 
-"For typography, we'll use Google Fonts for easy web integration.
+"Для типографики мы будем использовать Google Fonts для легкой веб-интеграции.
 
-**Heading font** (titles, section headers):
-Popular choices: `DM Sans`, `Inter`, `Poppins`, `Manrope`, `Space Grotesk`, `Outfit`
+**Шрифт заголовков** (заголовки, заголовки секций):
+Популярные варианты: `DM Sans`, `Inter`, `Poppins`, `Manrope`, `Space Grotesk`, `Outfit`
 
-**Body font** (paragraphs, UI text):
-Often the same as heading, or: `Inter`, `Source Sans 3`, `Nunito Sans`, `Open Sans`
+**Шрифт тела** (абзацы, текст UI):
+Часто тот же, что и заголовки, или: `Inter`, `Source Sans 3`, `Nunito Sans`, `Open Sans`
 
-**Mono font** (code, technical content):
-Options: `IBM Plex Mono`, `JetBrains Mono`, `Fira Code`, `Source Code Pro`
+**Моноширинный шрифт** (код, технический контент):
+Варианты: `IBM Plex Mono`, `JetBrains Mono`, `Fira Code`, `Source Code Pro`
 
-My suggestions for [Product Name]:
-- **Heading:** [suggestion] — [why]
-- **Body:** [suggestion] — [why]
-- **Mono:** [suggestion] — [why]
+Мои предложения для [Product Name]:
+- **Заголовки:** [предложение] — [почему]
+- **Тело:** [предложение] — [почему]
+- **Моно:** [предложение] — [почему]
 
-What do you prefer?"
+Что вы предпочитаете?"
 
 ## Step 5: Present Final Choices
 
-Once they've made decisions:
+Как только они приняли решения:
 
-"Here's your design system:
+"Вот ваша система дизайна:
 
-**Colors:**
-- Primary: `[color]`
-- Secondary: `[color]`
-- Neutral: `[color]`
+**Цвета:**
+- Основной: `[color]`
+- Вторичный: `[color]`
+- Нейтральный: `[color]`
 
-**Typography:**
-- Heading: [Font Name]
-- Body: [Font Name]
-- Mono: [Font Name]
+**Типографика:**
+- Заголовки: [Font Name]
+- Тело: [Font Name]
+- Моно: [Font Name]
 
-Does this look good? Ready to save it?"
+Выглядит хорошо? Готовы сохранить?"
 
 ## Step 6: Create the Files
 
-Once approved, create two files:
+После одобрения создайте два файла:
 
-**File 1:** `/product/design-system/colors.json`
+**Файл 1:** `/product/design-system/colors.json`
 ```json
 {
   "primary": "[color]",
@@ -109,7 +109,7 @@ Once approved, create two files:
 }
 ```
 
-**File 2:** `/product/design-system/typography.json`
+**Файл 2:** `/product/design-system/typography.json`
 ```json
 {
   "heading": "[Font Name]",
@@ -120,47 +120,47 @@ Once approved, create two files:
 
 ## Step 7: Confirm Completion
 
-Let the user know:
+Сообщите пользователю:
 
-"I've saved your design tokens:
+"Я сохранил ваши токены дизайна:
 - `/product/design-system/colors.json`
 - `/product/design-system/typography.json`
 
-**Your palette:**
-- Primary: `[color]` — for buttons, links, key actions
-- Secondary: `[color]` — for tags, highlights, secondary elements
-- Neutral: `[color]` — for backgrounds, text, borders
+**Ваша палитра:**
+- Основной: `[color]` — для кнопок, ссылок, ключевых действий
+- Вторичный: `[color]` — для тегов, выделений, вторичных элементов
+- Нейтральный: `[color]` — для фонов, текста, границ
 
-**Your fonts:**
-- [Heading Font] for headings
-- [Body Font] for body text
-- [Mono Font] for code
+**Ваши шрифты:**
+- [Heading Font] для заголовков
+- [Body Font] для основного текста
+- [Mono Font] для кода
 
-These will be used when creating screen designs for your sections.
+Они будут использоваться при создании дизайнов экранов для ваших секций.
 
-Next step: Run `/design-shell` to design your application's navigation and layout."
+Следующий шаг: Запустите `/design-shell` для проектирования навигации и макета вашего приложения."
 
 ## Reference: Tailwind Color Palette
 
-Available colors (each has shades 50-950):
-- **Warm:** `red`, `orange`, `amber`, `yellow`, `lime`
-- **Cool:** `green`, `emerald`, `teal`, `cyan`, `sky`, `blue`
-- **Purple:** `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose`
-- **Neutral:** `slate`, `gray`, `zinc`, `neutral`, `stone`
+Доступные цвета (каждый имеет оттенки 50-950):
+- **Теплые:** `red`, `orange`, `amber`, `yellow`, `lime`
+- **Холодные:** `green`, `emerald`, `teal`, `cyan`, `sky`, `blue`
+- **Фиолетовые:** `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose`
+- **Нейтральные:** `slate`, `gray`, `zinc`, `neutral`, `stone`
 
 ## Reference: Popular Google Font Pairings
 
-- **Modern & Clean:** DM Sans + DM Sans + IBM Plex Mono
-- **Professional:** Inter + Inter + JetBrains Mono
-- **Friendly:** Nunito Sans + Nunito Sans + Fira Code
-- **Bold & Modern:** Space Grotesk + Inter + Source Code Pro
-- **Editorial:** Playfair Display + Source Sans 3 + IBM Plex Mono
-- **Tech-forward:** JetBrains Mono + Inter + JetBrains Mono
+- **Современный и чистый:** DM Sans + DM Sans + IBM Plex Mono
+- **Профессиональный:** Inter + Inter + JetBrains Mono
+- **Дружелюбный:** Nunito Sans + Nunito Sans + Fira Code
+- **Смелый и современный:** Space Grotesk + Inter + Source Code Pro
+- **Редакционный:** Playfair Display + Source Sans 3 + IBM Plex Mono
+- **Технологически продвинутый:** JetBrains Mono + Inter + JetBrains Mono
 
 ## Important Notes
 
-- Colors should be Tailwind palette names (not hex codes)
-- Fonts should be exact Google Fonts names
-- Keep suggestions contextual to the product type
-- The mono font is optional but recommended for any product with code/technical content
-- Design tokens apply to screen designs only — the Design OS app keeps its own aesthetic
+- Цвета должны быть названиями палитры Tailwind (не hex-коды)
+- Шрифты должны быть точными названиями Google Fonts
+- Держите предложения контекстными к типу продукта
+- Моноширинный шрифт опционален, но рекомендуется для любого продукта с кодом/техническим контентом
+- Токены дизайна применяются только к дизайнам экранов — приложение Design OS сохраняет свою собственную эстетику

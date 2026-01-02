@@ -1,13 +1,13 @@
 # Product Roadmap
 
-You are helping the user create or update their product roadmap for Design OS. This command serves two purposes:
+Вы помогаете пользователю создать или обновить дорожную карту продукта для Design OS. Эта команда служит двум целям:
 
-1. **Create** an initial roadmap if one doesn't exist
-2. **Sync** changes if the user has manually edited the markdown files
+1. **Создать** первоначальную дорожную карту, если её нет
+2. **Синхронизировать** изменения, если пользователь вручную отредактировал markdown файлы
 
 ## Step 1: Check Current State
 
-First, check if `/product/product-roadmap.md` exists and read `/product/product-overview.md` if it exists.
+Сначала проверьте, существует ли `/product/product-roadmap.md` и прочитайте `/product/product-overview.md`, если он существует.
 
 ---
 
@@ -15,40 +15,40 @@ First, check if `/product/product-roadmap.md` exists and read `/product/product-
 
 ### Analyze the Product Overview
 
-Read the product overview and analyze:
-- The core description
-- The problems being solved
-- The key features listed
+Прочитайте обзор продукта и проанализируйте:
+- Основное описание
+- Решаемые проблемы
+- Перечисленные ключевые функции
 
 ### Propose Sections
 
-Based on your analysis, propose 3-5 sections that represent:
-- **Navigation items** - main areas of the product UI
-- **Roadmap phases** - logical order for building
-- **Self-contained feature areas** - each can be designed and built independently
+Основываясь на вашем анализе, предложите 3-5 секций, которые представляют:
+- **Элементы навигации** - основные области UI продукта
+- **Фазы дорожной карты** - логический порядок построения
+- **Самостоятельные области функций** - каждая может быть спроектирована и построена независимо
 
-Present your proposal:
+Представьте ваше предложение:
 
-"Based on your product overview, I'd suggest breaking this into these sections:
+"Основываясь на обзоре вашего продукта, я бы предложил разбить это на следующие секции:
 
-1. **[Section Title]** - [One sentence description]
-2. **[Section Title]** - [One sentence description]
-3. **[Section Title]** - [One sentence description]
+1. **[Section Title]** - [Описание в одно предложение]
+2. **[Section Title]** - [Описание в одно предложение]
+3. **[Section Title]** - [Описание в одно предложение]
 
-These are ordered by importance and logical development sequence. The first section would be the core functionality, with each subsequent section building on it."
+Они упорядочены по важности и логической последовательности разработки. Первая секция будет основной функциональностью, каждая последующая секция строится на ней."
 
-Then use the AskUserQuestion tool to ask the user: "Does this breakdown make sense? Would you like to adjust any sections or their order?"
+Затем используйте инструмент AskUserQuestion, чтобы спросить пользователя: "Имеет ли смысл такое разбиение? Хотели бы вы скорректировать какие-либо секции или их порядок?"
 
 ### Refine with User
 
-Iterate on the sections based on user feedback. Ask clarifying questions:
-- "Should [feature X] be its own section or part of [Section Y]?"
-- "What would you consider the most critical section to build first?"
-- "Are there any major areas I'm missing?"
+Итерируйте по секциям на основе обратной связи пользователя. Задавайте уточняющие вопросы:
+- "Должна ли [feature X] быть отдельной секцией или частью [Section Y]?"
+- "Какую секцию вы считаете наиболее критичной для построения первой?"
+- "Есть ли какие-либо основные области, которые я упустил?"
 
 ### Create the File
 
-Once approved, create `/product/product-roadmap.md` with this exact format:
+После одобрения создайте `/product/product-roadmap.md` в следующем точном формате:
 
 ```markdown
 # Product Roadmap
@@ -56,24 +56,24 @@ Once approved, create `/product/product-roadmap.md` with this exact format:
 ## Sections
 
 ### 1. [Section Title]
-[One sentence description]
+[Описание в одно предложение]
 
 ### 2. [Section Title]
-[One sentence description]
+[Описание в одно предложение]
 
 ### 3. [Section Title]
-[One sentence description]
+[Описание в одно предложение]
 ```
 
 ### Confirm
 
-"I've created your product roadmap at `/product/product-roadmap.md`. The homepage now shows your [N] sections:
+"Я создал вашу дорожную карту продукта в `/product/product-roadmap.md`. На главной странице теперь отображаются ваши [N] секций:
 
-1. **[Section 1]** — [Description]
-2. **[Section 2]** — [Description]
-3. **[Section 3]** — [Description]
+1. **[Section 1]** — [Описание]
+2. **[Section 2]** — [Описание]
+3. **[Section 3]** — [Описание]
 
-**Next step:** Run `/data-model` to define the core entities and relationships in your product. This establishes a shared vocabulary that keeps your sections consistent."
+**Следующий шаг:** Запустите `/data-model` для определения основных сущностей и связей в вашем продукте. Это устанавливает общий словарь, который поддерживает согласованность ваших секций."
 
 ---
 
@@ -81,41 +81,41 @@ Once approved, create `/product/product-roadmap.md` with this exact format:
 
 ### Read Current Files
 
-Read both:
+Прочитайте оба:
 - `/product/product-overview.md`
 - `/product/product-roadmap.md`
 
 ### Report Current State
 
-"I see you already have a product roadmap defined with [N] sections:
+"Я вижу, что у вас уже определена дорожная карта продукта с [N] секциями:
 
 1. [Section 1 Title]
 2. [Section 2 Title]
 ...
 
-What would you like to do?
-- **Update sections** - Add, remove, or reorder sections
-- **Sync from files** - I'll re-read the markdown files and confirm everything is in sync
-- **Start fresh** - Regenerate the roadmap based on the current product overview"
+Что вы хотели бы сделать?
+- **Обновить секции** - Добавить, удалить или изменить порядок секций
+- **Синхронизировать из файлов** - Я перечитаю markdown файлы и подтвержу, что всё синхронизировано
+- **Начать заново** - Регенерировать дорожную карту на основе текущего обзора продукта"
 
 ### Handle User Choice
 
-**If updating sections:**
-Ask what changes they want to make, then update the file accordingly.
+**Если обновление секций:**
+Спросите, какие изменения они хотят внести, затем обновите файл соответственно.
 
-**If syncing:**
-Confirm the current state matches what's in the files. If the user has manually edited the `.md` files, let them know the app will pick up those changes on next build/refresh.
+**Если синхронизация:**
+Подтвердите, что текущее состояние соответствует тому, что в файлах. Если пользователь вручную отредактировал файлы `.md`, сообщите им, что приложение подхватит эти изменения при следующей сборке/обновлении.
 
-**If starting fresh:**
-Follow the "Creating New" flow above, but note you're replacing the existing roadmap.
+**Если начать заново:**
+Следуйте потоку "Creating New" выше, но отметьте, что вы заменяете существующую дорожную карту.
 
 ---
 
 ## Important Notes
 
-- Sections should be ordered by development priority
-- Each section should be self-contained enough to design and build independently
-- Section titles become navigation items in the app
-- The numbered format (`### 1. Title`) is required for parsing
-- Keep descriptions to one sentence - concise and clear
-- Don't create too many sections (3-5 is ideal)
+- Секции должны быть упорядочены по приоритету разработки
+- Каждая секция должна быть достаточно самостоятельной, чтобы проектироваться и строиться независимо
+- Названия секций становятся элементами навигации в приложении
+- Пронумерованный формат (`### 1. Title`) требуется для парсинга
+- Держите описания в одно предложение - кратко и ясно
+- Не создавайте слишком много секций (3-5 идеально)

@@ -1,129 +1,129 @@
 # Sample Data
 
-You are helping the user create realistic sample data for a section of their product. This data will be used to populate screen designs. You will also generate TypeScript types based on the data structure.
+Вы помогаете пользователю создать реалистичные примерные данные для секции его продукта. Эти данные будут использоваться для заполнения дизайнов экранов. Вы также сгенерируете типы TypeScript на основе структуры данных.
 
 ## Step 1: Check Prerequisites
 
-First, identify the target section and verify that `spec.md` exists for it.
+Сначала определите целевую секцию и проверьте, что для неё существует `spec.md`.
 
-Read `/product/product-roadmap.md` to get the list of available sections.
+Прочитайте `/product/product-roadmap.md`, чтобы получить список доступных секций.
 
-If there's only one section, auto-select it. If there are multiple sections, use the AskUserQuestion tool to ask which section the user wants to generate data for.
+Если есть только одна секция, автоматически выберите её. Если секций несколько, используйте инструмент AskUserQuestion, чтобы спросить, для какой секции пользователь хочет сгенерировать данные.
 
-Then check if `product/sections/[section-id]/spec.md` exists. If it doesn't:
+Затем проверьте, существует ли `product/sections/[section-id]/spec.md`. Если его нет:
 
-"I don't see a specification for **[Section Title]** yet. Please run `/shape-section` first to define the section's requirements, then come back to generate sample data."
+"Я не вижу спецификации для **[Section Title]** пока. Пожалуйста, сначала запустите `/shape-section` для определения требований секции, затем вернитесь для генерации примерных данных."
 
-Stop here if the spec doesn't exist.
+Остановитесь здесь, если спецификация не существует.
 
 ## Step 2: Check for Global Data Model
 
-Check if `/product/data-model/data-model.md` exists.
+Проверьте, существует ли `/product/data-model/data-model.md`.
 
-**If it exists:**
-- Read the file to understand the global entity definitions
-- Entity names in your sample data should match the global data model
-- Use the descriptions and relationships as a guide
+**Если он существует:**
+- Прочитайте файл, чтобы понять определения глобальных сущностей
+- Названия сущностей в ваших примерных данных должны соответствовать глобальной модели данных
+- Используйте описания и связи в качестве руководства
 
-**If it doesn't exist:**
-Show a warning but continue:
+**Если его нет:**
+Покажите предупреждение, но продолжайте:
 
-"Note: A global data model hasn't been defined yet. I'll create entity structures based on the section spec, but for consistency across sections, consider running `/data-model` first."
+"Примечание: Глобальная модель данных еще не определена. Я создам структуры сущностей на основе спецификации секции, но для согласованности между секциями рассмотрите сначала запуск `/data-model`."
 
 ## Step 3: Analyze the Specification
 
-Read and analyze `product/sections/[section-id]/spec.md` to understand:
+Прочитайте и проанализируйте `product/sections/[section-id]/spec.md`, чтобы понять:
 
-- What data entities are implied by the user flows?
-- What fields/properties would each entity need?
-- What sample values would be realistic and helpful for design?
-- What actions can be taken on each entity? (These become callback props)
+- Какие сущности данных подразумеваются пользовательскими потоками?
+- Какие поля/свойства нужны каждой сущности?
+- Какие примерные значения были бы реалистичными и полезными для дизайна?
+- Какие действия можно выполнить над каждой сущностью? (Они становятся пропсами колбэков)
 
-**If a global data model exists:** Cross-reference the spec with the data model. Use the same entity names and ensure consistency.
+**Если существует глобальная модель данных:** Сопоставьте спецификацию с моделью данных. Используйте те же названия сущностей и обеспечивайте согласованность.
 
 ## Step 4: Present Data Structure
 
-Present your proposed data structure to the user in human-friendly language. Non-technical users should understand how their data is being organized.
+Представьте вашу предлагаемую структуру данных пользователю простым языком. Нетехнические пользователи должны понимать, как организуются их данные.
 
-**If using global data model:**
+**Если используется глобальная модель данных:**
 
-"Based on the specification for **[Section Title]** and your global data model, here's how I'm organizing the data:
+"Основываясь на спецификации для **[Section Title]** и вашей глобальной модели данных, вот как я организую данные:
 
-**Entities (from your data model):**
+**Сущности (из вашей модели данных):**
 
-- **[Entity1]** — [Description from data model]
-- **[Entity2]** — [Description from data model]
+- **[Entity1]** — [Описание из модели данных]
+- **[Entity2]** — [Описание из модели данных]
 
-**Section-specific data:**
+**Данные, специфичные для секции:**
 
-[Any additional data specific to this section's UI needs]
+[Любые дополнительные данные, специфичные для потребностей UI этой секции]
 
-**What You Can Do:**
+**Что вы можете делать:**
 
-- View, edit, and delete [entities]
-- [Other key actions from the spec]
+- Просматривать, редактировать и удалять [сущности]
+- [Другие ключевые действия из спецификации]
 
-**Sample Data:**
+**Примерные данные:**
 
-I'll create [X] realistic [Entity1] records with varied content to make your screen designs feel real.
+Я создам [X] реалистичных записей [Entity1] с разнообразным контентом, чтобы ваши дизайны экранов выглядели реальными.
 
-Does this structure make sense? Any adjustments?"
+Имеет ли смысл эта структура? Какие-нибудь корректировки?"
 
-**If no global data model:**
+**Если нет глобальной модели данных:**
 
-"Based on the specification for **[Section Title]**, here's how I'm proposing to organize your data:
+"Основываясь на спецификации для **[Section Title]**, вот как я предлагаю организовать ваши данные:
 
-**Data Models:**
+**Модели данных:**
 
-- **[Entity1]** — [One sentence explaining what this represents]
-- **[Entity2]** — [One sentence explanation]
+- **[Entity1]** — [Одно предложение, объясняющее, что это представляет]
+- **[Entity2]** — [Одно предложение объяснения]
 
-**How They Connect:**
+**Как они соединяются:**
 
-[Explain relationships in simple terms]
+[Объясните связи простыми терминами]
 
-**What You Can Do:**
+**Что вы можете делать:**
 
-- View, edit, and delete [entities]
-- [Other key actions from the spec]
+- Просматривать, редактировать и удалять [сущности]
+- [Другие ключевые действия из спецификации]
 
-**Sample Data:**
+**Примерные данные:**
 
-I'll create [X] realistic [Entity1] records with varied content to make your screen designs feel real.
+Я создам [X] реалистичных записей [Entity1] с разнообразным контентом, чтобы ваши дизайны экранов выглядели реальными.
 
-Does this structure make sense for your product? Any adjustments?"
+Имеет ли смысл эта структура для вашего продукта? Какие-нибудь корректировки?"
 
-Use the AskUserQuestion tool if there are ambiguities about what data is needed.
+Используйте инструмент AskUserQuestion, если есть неясности относительно того, какие данные нужны.
 
 ## Step 5: Generate the Data File
 
-Once the user approves the structure, create `product/sections/[section-id]/data.json` with:
+После одобрения пользователем структуры создайте `product/sections/[section-id]/data.json` с:
 
-- **A `_meta` section** - Human-readable descriptions of each data model and their relationships (displayed in the UI)
-- **Realistic sample data** - Use believable names, dates, descriptions, etc.
-- **Varied content** - Mix short and long text, different statuses, etc.
-- **Edge cases** - Include at least one empty array, one long description, etc.
-- **TypeScript-friendly structure** - Use consistent field names and types
+- **Секцией `_meta`** - Описаниями каждой модели данных и их связей простым языком (отображаются в UI)
+- **Реалистичными примерными данными** - Используйте правдоподобные имена, даты, описания и т.д.
+- **Разнообразным контентом** - Смешивайте короткий и длинный текст, разные статусы и т.д.
+- **Граничными случаями** - Включите хотя бы один пустой массив, одно длинное описание и т.д.
+- **Структурой, дружественной к TypeScript** - Используйте согласованные имена полей и типы
 
 ### Required `_meta` Structure
 
-Every data.json MUST include a `_meta` object at the top level with:
+Каждый data.json ДОЛЖЕН включать объект `_meta` на верхнем уровне с:
 
-1. **`models`** - An object where each key is a model name and value is a plain-language description
-2. **`relationships`** - An array of strings explaining how models connect to each other
+1. **`models`** - Объект, где каждый ключ - это имя модели, а значение - описание простым языком
+2. **`relationships`** - Массив строк, объясняющих, как модели соединяются друг с другом
 
-Example structure:
+Пример структуры:
 
 ```json
 {
   "_meta": {
     "models": {
-      "invoices": "Each invoice represents a bill you send to a client for work completed.",
-      "lineItems": "Line items are the individual services or products listed on each invoice."
+      "invoices": "Каждый счет представляет собой счет, который вы отправляете клиенту за выполненную работу.",
+      "lineItems": "Позиции - это отдельные услуги или продукты, перечисленные в каждом счете."
     },
     "relationships": [
-      "Each Invoice contains one or more Line Items (the breakdown of charges)",
-      "Invoices track which Client they belong to via the clientName field"
+      "Каждый Счет содержит одну или несколько Позиций (разбивка платежей)",
+      "Счета отслеживают, какому Клиенту они принадлежат, через поле clientName"
     ]
   },
   "invoices": [
@@ -143,42 +143,42 @@ Example structure:
 }
 ```
 
-The `_meta` descriptions should:
-- Use plain, non-technical language
-- Explain what each model represents in the context of the user's product
-- Describe relationships in terms of "contains", "belongs to", "links to", etc.
-- **Match the global data model descriptions if one exists**
+Описания `_meta` должны:
+- Использовать простой, нетехнический язык
+- Объяснять, что представляет каждая модель в контексте продукта пользователя
+- Описывать связи в терминах "содержит", "принадлежит", "связывает" и т.д.
+- **Соответствовать описаниям глобальной модели данных, если она существует**
 
-The data should directly support the user flows and UI requirements in the spec.
+Данные должны напрямую поддерживать пользовательские потоки и требования к UI в спецификации.
 
 ## Step 6: Generate TypeScript Types
 
-After creating data.json, generate `product/sections/[section-id]/types.ts` based on the data structure.
+После создания data.json сгенерируйте `product/sections/[section-id]/types.ts` на основе структуры данных.
 
 ### Type Generation Rules
 
-1. **Infer types from the sample data values:**
-   - Strings → `string`
-   - Numbers → `number`
-   - Booleans → `boolean`
-   - Arrays → `TypeName[]`
-   - Objects → Create a named interface
+1. **Выводите типы из значений примерных данных:**
+   - Строки → `string`
+   - Числа → `number`
+   - Булевы → `boolean`
+   - Массивы → `TypeName[]`
+   - Объекты → Создайте именованный интерфейс
 
-2. **Use union types for status/enum fields:**
+2. **Используйте типы объединения для полей статуса/перечисления:**
 
-   - If a field like `status` has known values, use a union: `'draft' | 'sent' | 'paid' | 'overdue'`
+   - Если поле типа `status` имеет известные значения, используйте объединение: `'draft' | 'sent' | 'paid' | 'overdue'`
 
-   - Base this on the spec and the variety in sample data
+   - Основывайтесь на спецификации и разнообразии в примерных данных
 
-3. **Create a Props interface for the main component:**
-   - Include the data as a prop (e.g., `invoices: Invoice[]`)
-   - Include optional callback props for each action (e.g., `onDelete?: (id: string) => void`)
+3. **Создайте интерфейс Props для основного компонента:**
+   - Включите данные как проп (например, `invoices: Invoice[]`)
+   - Включите опциональные пропсы колбэков для каждого действия (например, `onDelete?: (id: string) => void`)
 
-4. **Use consistent entity names:**
-   - If a global data model exists, use the same entity names
-   - This ensures consistency across sections
+4. **Используйте согласованные имена сущностей:**
+   - Если существует глобальная модель данных, используйте те же имена сущностей
+   - Это обеспечивает согласованность между секциями
 
-Example types.ts:
+Пример types.ts:
 
 ```typescript
 // =============================================================================
@@ -224,40 +224,40 @@ export interface InvoiceListProps {
 
 ### Naming Conventions
 
-- Use PascalCase for interface names: `Invoice`, `LineItem`, `InvoiceListProps`
+- Используйте PascalCase для имен интерфейсов: `Invoice`, `LineItem`, `InvoiceListProps`
 
-- Use camelCase for property names: `clientName`, `dueDate`, `lineItems`
+- Используйте camelCase для имен свойств: `clientName`, `dueDate`, `lineItems`
 
-- Props interface should be named `[SectionName]Props` (e.g., `InvoiceListProps`)
+- Интерфейс Props должен называться `[SectionName]Props` (например, `InvoiceListProps`)
 
-- Add JSDoc comments for callback props to explain when they're called
+- Добавьте комментарии JSDoc для пропсов колбэков, чтобы объяснить, когда они вызываются
 
-- **Match entity names from the global data model if one exists**
+- **Соответствуйте именам сущностей из глобальной модели данных, если она существует**
 
 ## Step 7: Confirm and Next Steps
 
-Let the user know:
+Сообщите пользователю:
 
-"I've created two files for **[Section Title]**:
+"Я создал два файла для **[Section Title]**:
 
-1. `product/sections/[section-id]/data.json` - Sample data with [X] records
+1. `product/sections/[section-id]/data.json` - Примерные данные с [X] записями
 
-2. `product/sections/[section-id]/types.ts` - TypeScript interfaces for type safety
+2. `product/sections/[section-id]/types.ts` - Интерфейсы TypeScript для безопасности типов
 
-The types include:
+Типы включают:
 
-- `[Entity]` - The main data type
-- `[SectionName]Props` - Props interface for the component (includes callbacks for [list actions])
+- `[Entity]` - Основной тип данных
+- `[SectionName]Props` - Интерфейс пропсов для компонента (включает колбэки для [список действий])
 
-When you're ready, run `/design-screen` to create the screen design for this section."
+Когда будете готовы, запустите `/design-screen` для создания дизайна экрана для этой секции."
 
 ## Important Notes
 
-- Generate realistic, believable sample data - not "Lorem ipsum" or "Test 123"
-- Include 5-10 sample records for main entities (enough to show a realistic list)
-- Include edge cases: empty arrays, long text, different statuses
-- Keep field names clear and TypeScript-friendly (camelCase)
-- The data structure should directly map to the spec's user flows
-- Always generate types.ts alongside data.json
-- Callback props should cover all actions mentioned in the spec
-- **Use entity names from the global data model for consistency across sections**
+- Генерируйте реалистичные, правдоподобные примерные данные - не "Lorem ipsum" или "Test 123"
+- Включайте 5-10 примерных записей для основных сущностей (достаточно, чтобы показать реалистичный список)
+- Включайте граничные случаи: пустые массивы, длинный текст, разные статусы
+- Держите имена полей ясными и дружественными к TypeScript (camelCase)
+- Структура данных должна напрямую соответствовать пользовательским потокам спецификации
+- Всегда генерируйте types.ts вместе с data.json
+- Пропсы колбэков должны покрывать все действия, упомянутые в спецификации
+- **Используйте имена сущностей из глобальной модели данных для согласованности между секциями**

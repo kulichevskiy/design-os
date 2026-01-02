@@ -1,58 +1,58 @@
 # Export Product
 
-You are helping the user export their complete product design as a handoff package for implementation. This generates all files needed to build the product in a real codebase.
+Вы помогаете пользователю экспортировать его полный дизайн продукта как пакет передачи для реализации. Это генерирует все файлы, необходимые для построения продукта в реальной кодовой базе.
 
 ## Step 1: Check Prerequisites
 
-Verify the minimum requirements exist:
+Проверьте, что существуют минимальные требования:
 
-**Required:**
-- `/product/product-overview.md` — Product overview
-- `/product/product-roadmap.md` — Sections defined
-- At least one section with screen designs in `src/sections/[section-id]/`
+**Обязательные:**
+- `/product/product-overview.md` — Обзор продукта
+- `/product/product-roadmap.md` — Определенные секции
+- По крайней мере одна секция с дизайнами экранов в `src/sections/[section-id]/`
 
-**Recommended (show warning if missing):**
-- `/product/data-model/data-model.md` — Global data model
-- `/product/design-system/colors.json` — Color tokens
-- `/product/design-system/typography.json` — Typography tokens
-- `src/shell/components/AppShell.tsx` — Application shell
+**Рекомендуемые (показывать предупреждение, если отсутствуют):**
+- `/product/data-model/data-model.md` — Глобальная модель данных
+- `/product/design-system/colors.json` — Токены цветов
+- `/product/design-system/typography.json` — Токены типографики
+- `src/shell/components/AppShell.tsx` — Оболочка приложения
 
-If required files are missing:
+Если обязательные файлы отсутствуют:
 
-"To export your product, you need at minimum:
-- A product overview (`/product-vision`)
-- A roadmap with sections (`/product-roadmap`)
-- At least one section with screen designs
+"Для экспорта вашего продукта вам нужно минимум:
+- Обзор продукта (`/product-vision`)
+- Дорожная карта с секциями (`/product-roadmap`)
+- По крайней мере одна секция с дизайнами экранов
 
-Please complete these first."
+Пожалуйста, сначала завершите эти."
 
-Stop here if required files are missing.
+Остановитесь здесь, если обязательные файлы отсутствуют.
 
-If recommended files are missing, show warnings but continue:
+Если рекомендуемые файлы отсутствуют, покажите предупреждения, но продолжайте:
 
-"Note: Some recommended items are missing:
-- [ ] Data model — Run `/data-model` for consistent entity definitions
-- [ ] Design tokens — Run `/design-tokens` for consistent styling
-- [ ] Application shell — Run `/design-shell` for navigation structure
+"Примечание: Некоторые рекомендуемые элементы отсутствуют:
+- [ ] Модель данных — Запустите `/data-model` для согласованных определений сущностей
+- [ ] Токены дизайна — Запустите `/design-tokens` для согласованной стилизации
+- [ ] Оболочка приложения — Запустите `/design-shell` для структуры навигации
 
-You can proceed without these, but they help ensure a complete handoff."
+Вы можете продолжить без них, но они помогают обеспечить полную передачу."
 
 ## Step 2: Gather Export Information
 
-Read all relevant files:
+Прочитайте все соответствующие файлы:
 
-1. `/product/product-overview.md` — Product name, description, features
-2. `/product/product-roadmap.md` — List of sections in order
-3. `/product/data-model/data-model.md` (if exists)
-4. `/product/design-system/colors.json` (if exists)
-5. `/product/design-system/typography.json` (if exists)
-6. `/product/shell/spec.md` (if exists)
-7. For each section: `spec.md`, `data.json`, `types.ts`
-8. List screen design components in `src/sections/` and `src/shell/`
+1. `/product/product-overview.md` — Название продукта, описание, функции
+2. `/product/product-roadmap.md` — Список секций по порядку
+3. `/product/data-model/data-model.md` (если существует)
+4. `/product/design-system/colors.json` (если существует)
+5. `/product/design-system/typography.json` (если существует)
+6. `/product/shell/spec.md` (если существует)
+7. Для каждой секции: `spec.md`, `data.json`, `types.ts`
+8. Список компонентов дизайна экранов в `src/sections/` и `src/shell/`
 
 ## Step 3: Create Export Directory Structure
 
-Create the `product-plan/` directory with this structure:
+Создайте директорию `product-plan/` со следующей структурой:
 
 ```
 product-plan/
@@ -104,7 +104,7 @@ product-plan/
 
 ## Step 4: Generate product-overview.md
 
-Create `product-plan/product-overview.md`:
+Создайте `product-plan/product-overview.md`:
 
 ```markdown
 # [Product Name] — Product Overview
@@ -152,7 +152,7 @@ Each milestone has a dedicated instruction document in `product-plan/instruction
 
 ## Step 5: Generate Milestone Instructions
 
-Each milestone instruction file should begin with the following preamble (adapt the milestone-specific details):
+Каждый файл инструкций по вехам должен начинаться со следующего преамбулы (адаптируйте детали, специфичные для вехи):
 
 ```markdown
 ---
@@ -187,7 +187,7 @@ Each milestone instruction file should begin with the following preamble (adapt 
 
 ### 01-foundation.md
 
-Place in `product-plan/instructions/incremental/01-foundation.md`:
+Поместите в `product-plan/instructions/incremental/01-foundation.md`:
 
 ```markdown
 # Milestone 1: Foundation
@@ -283,7 +283,7 @@ Design and implement your own application shell with:
 
 ### [NN]-[section-id].md (for each section)
 
-Place in `product-plan/instructions/incremental/[NN]-[section-id].md` (starting at 02 for the first section):
+Поместите в `product-plan/instructions/incremental/[NN]-[section-id].md` (начиная с 02 для первой секции):
 
 ```markdown
 # Milestone [N]: [Section Title]
@@ -407,7 +407,7 @@ When fully implemented, users should be able to complete these flows:
 
 ## Step 6: Generate one-shot-instructions.md
 
-Create `product-plan/instructions/one-shot-instructions.md` by combining all milestone content into a single document. Include the preamble at the very top:
+Создайте `product-plan/instructions/one-shot-instructions.md`, объединив весь контент вех в один документ. Включите преамбулу в самом верху:
 
 ```markdown
 # [Product Name] — Complete Implementation Instructions
@@ -486,32 +486,32 @@ The test instructions include:
 
 ### Shell Components
 
-Copy from `src/shell/components/` to `product-plan/shell/components/`:
+Скопируйте из `src/shell/components/` в `product-plan/shell/components/`:
 
-- Transform import paths from `@/...` to relative paths
-- Remove any Design OS-specific imports
-- Ensure components are self-contained
+- Преобразуйте пути импорта из `@/...` в относительные пути
+- Удалите любые импорты, специфичные для Design OS
+- Убедитесь, что компоненты самодостаточны
 
 ### Section Components
 
-For each section, copy from `src/sections/[section-id]/components/` to `product-plan/sections/[section-id]/components/`:
+Для каждой секции скопируйте из `src/sections/[section-id]/components/` в `product-plan/sections/[section-id]/components/`:
 
-- Transform import paths:
+- Преобразуйте пути импорта:
   - `@/../product/sections/[section-id]/types` → `../types`
-- Remove Design OS-specific imports
-- Keep only the exportable components (not preview wrappers)
+- Удалите импорты, специфичные для Design OS
+- Оставьте только экспортируемые компоненты (не обертки предпросмотра)
 
 ### Types Files
 
-Copy `product/sections/[section-id]/types.ts` to `product-plan/sections/[section-id]/types.ts`
+Скопируйте `product/sections/[section-id]/types.ts` в `product-plan/sections/[section-id]/types.ts`
 
 ### Sample Data
 
-Copy `product/sections/[section-id]/data.json` to `product-plan/sections/[section-id]/sample-data.json`
+Скопируйте `product/sections/[section-id]/data.json` в `product-plan/sections/[section-id]/sample-data.json`
 
 ## Step 8: Generate Section READMEs
 
-For each section, create `product-plan/sections/[section-id]/README.md`:
+Для каждой секции создайте `product-plan/sections/[section-id]/README.md`:
 
 ```markdown
 # [Section Title]
@@ -557,7 +557,7 @@ See `screenshot.png` for the target UI design.
 
 ## Step 9: Generate Section Test Instructions
 
-For each section, create `product-plan/sections/[section-id]/tests.md` with detailed test-writing instructions based on the section's spec, user flows, and UI design.
+Для каждой секции создайте `product-plan/sections/[section-id]/tests.md` с подробными инструкциями по написанию тестов на основе спецификации секции, пользовательских потоков и дизайна UI.
 
 ```markdown
 # Test Instructions: [Section Title]
@@ -761,17 +761,17 @@ const mockErrorResponse = {
 
 ### Guidelines for Writing tests.md
 
-When generating tests.md for each section:
+При генерации tests.md для каждой секции:
 
-1. **Read the spec.md thoroughly** — Extract all user flows and requirements
-2. **Study the screen design components** — Note exact button labels, field names, UI text
-3. **Review types.ts** — Understand the data shapes for assertions
-4. **Include specific UI text** — Tests should verify exact labels, messages, placeholders
-5. **Cover success and failure paths** — Every action should have both tested
-6. **Always test empty states** — Primary lists with no items, parent records with no children, filtered results with no matches
-7. **Be specific about assertions** — "Shows error" is too vague; "Shows red border and message 'Email is required' below the field" is specific
-8. **Include edge cases** — Boundary conditions, transitions between empty and populated states
-9. **Stay framework-agnostic** — Describe WHAT to test, not HOW to write the test code
+1. **Тщательно прочитайте spec.md** — Извлеките все пользовательские потоки и требования
+2. **Изучите компоненты дизайна экранов** — Отметьте точные метки кнопок, имена полей, текст UI
+3. **Просмотрите types.ts** — Поймите формы данных для утверждений
+4. **Включите конкретный текст UI** — Тесты должны проверять точные метки, сообщения, плейсхолдеры
+5. **Покройте пути успеха и неудачи** — Каждое действие должно иметь оба протестированных
+6. **Всегда тестируйте пустые состояния** — Основные списки без элементов, родительские записи без дочерних, отфильтрованные результаты без совпадений
+7. **Будьте конкретны в утверждениях** — "Показывает ошибку" слишком расплывчато; "Показывает красную границу и сообщение 'Email обязателен' под полем" конкретно
+8. **Включите граничные случаи** — Граничные условия, переходы между пустыми и заполненными состояниями
+9. **Оставайтесь независимыми от фреймворка** — Описывайте ЧТО тестировать, а не КАК писать тестовый код
 
 ## Step 10: Generate Design System Files
 
@@ -835,11 +835,11 @@ Add to your HTML `<head>` or CSS:
 
 ## Step 11: Generate Prompt Files
 
-Create the `product-plan/prompts/` directory with two ready-to-use prompt files.
+Создайте директорию `product-plan/prompts/` с двумя готовыми к использованию файлами промптов.
 
 ### one-shot-prompt.md
 
-Create `product-plan/prompts/one-shot-prompt.md`:
+Создайте `product-plan/prompts/one-shot-prompt.md`:
 
 ```markdown
 # One-Shot Implementation Prompt
@@ -895,7 +895,7 @@ Once I answer your questions, create a comprehensive implementation plan before 
 
 ### section-prompt.md
 
-Create `product-plan/prompts/section-prompt.md`:
+Создайте `product-plan/prompts/section-prompt.md`:
 
 ```markdown
 # Section Implementation Prompt
@@ -963,7 +963,7 @@ Once I answer your questions, proceed with implementation.
 
 ## Step 12: Generate README.md
 
-Create `product-plan/README.md`:
+Создайте `product-plan/README.md`:
 
 ```markdown
 # [Product Name] — Design Handoff
@@ -1039,13 +1039,13 @@ The test instructions are **framework-agnostic** — they describe WHAT to test,
 
 ## Step 13: Copy Screenshots
 
-Copy any `.png` files from:
+Скопируйте любые файлы `.png` из:
 - `product/shell/` → `product-plan/shell/`
 - `product/sections/[section-id]/` → `product-plan/sections/[section-id]/`
 
 ## Step 14: Create Zip File
 
-After generating all the export files, create a zip archive of the product-plan folder:
+После генерации всех файлов экспорта создайте zip-архив папки product-plan:
 
 ```bash
 # Remove any existing zip file
@@ -1055,51 +1055,51 @@ rm -f product-plan.zip
 cd . && zip -r product-plan.zip product-plan/
 ```
 
-This creates `product-plan.zip` in the project root, which will be available for download on the Export page.
+Это создаст `product-plan.zip` в корне проекта, который будет доступен для загрузки на странице Export.
 
 ## Step 15: Confirm Completion
 
-Let the user know:
+Сообщите пользователю:
 
-"I've created the complete export package at `product-plan/` and `product-plan.zip`.
+"Я создал полный пакет экспорта в `product-plan/` и `product-plan.zip`.
 
-**What's Included:**
+**Что включено:**
 
-**Ready-to-Use Prompts:**
-- `prompts/one-shot-prompt.md` — Prompt for full implementation
-- `prompts/section-prompt.md` — Prompt template for section-by-section
+**Готовые к использованию промпты:**
+- `prompts/one-shot-prompt.md` — Промпт для полной реализации
+- `prompts/section-prompt.md` — Шаблон промпта для реализации по секциям
 
-**Instructions:**
-- `product-overview.md` — Product summary (always provide with instructions)
-- `instructions/one-shot-instructions.md` — All milestones combined
-- `instructions/incremental/` — [N] milestone instructions (foundation, then sections)
+**Инструкции:**
+- `product-overview.md` — Резюме продукта (всегда предоставляйте с инструкциями)
+- `instructions/one-shot-instructions.md` — Все вехи объединены
+- `instructions/incremental/` — [N] инструкций по вехам (основа, затем секции)
 
-**Design Assets:**
-- `design-system/` — Colors, fonts, tokens
-- `data-model/` — Entity types and sample data
-- `shell/` — Application shell components
-- `sections/` — [N] section component packages with test instructions
+**Дизайн-активы:**
+- `design-system/` — Цвета, шрифты, токены
+- `data-model/` — Типы сущностей и примерные данные
+- `shell/` — Компоненты оболочки приложения
+- `sections/` — [N] пакетов компонентов секций с инструкциями по тестам
 
-**Download:**
+**Загрузка:**
 
-Restart your dev server and visit the Export page to download `product-plan.zip`.
+Перезапустите ваш dev server и посетите страницу Export для загрузки `product-plan.zip`.
 
-**How to Use:**
+**Как использовать:**
 
-1. Copy `product-plan/` to your implementation codebase
-2. Open `prompts/one-shot-prompt.md` or `prompts/section-prompt.md`
-3. Add any additional notes, then copy/paste into your coding agent
-4. Answer the agent's clarifying questions about auth, data modeling, etc.
-5. Let the agent implement based on the instructions
+1. Скопируйте `product-plan/` в вашу кодовую базу реализации
+2. Откройте `prompts/one-shot-prompt.md` или `prompts/section-prompt.md`
+3. Добавьте любые дополнительные заметки, затем скопируйте/вставьте в ваш агент кодирования
+4. Ответьте на уточняющие вопросы агента об аутентификации, моделировании данных и т.д.
+5. Позвольте агенту реализовать на основе инструкций
 
-The components are props-based and portable — they accept data and callbacks, letting your implementation agent handle routing, data fetching, and state management however fits your stack."
+Компоненты на основе пропсов и портативны — они принимают данные и колбэки, позволяя вашему агенту реализации обрабатывать маршрутизацию, получение данных и управление состоянием как угодно подходит вашему стеку."
 
 ## Important Notes
 
-- Always transform import paths when copying components
-- Include `product-overview.md` context with every implementation session
-- Use the pre-written prompts — they prompt for important clarifying questions
-- Screenshots provide visual reference for fidelity checking
-- Sample data files are for testing before real APIs are built
-- The export is self-contained — no dependencies on Design OS
-- Components are portable — they work with any React setup
+- Всегда преобразуйте пути импорта при копировании компонентов
+- Включайте контекст `product-overview.md` в каждую сессию реализации
+- Используйте предварительно написанные промпты — они запрашивают важные уточняющие вопросы
+- Скриншоты предоставляют визуальную справку для проверки точности
+- Файлы примерных данных предназначены для тестирования перед построением реальных API
+- Экспорт самодостаточен — нет зависимостей от Design OS
+- Компоненты портативны — они работают с любой настройкой React

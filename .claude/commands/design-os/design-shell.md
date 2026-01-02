@@ -1,124 +1,124 @@
 # Design Shell
 
-You are helping the user design the application shell — the persistent navigation and layout that wraps all sections. This is a screen design, not implementation code.
+Вы помогаете пользователю спроектировать оболочку приложения — постоянную навигацию и макет, который оборачивает все секции. Это дизайн экрана, а не код реализации.
 
 ## Step 1: Check Prerequisites
 
-First, verify prerequisites exist:
+Сначала проверьте, что существуют предварительные условия:
 
-1. Read `/product/product-overview.md` — Product name and description
-2. Read `/product/product-roadmap.md` — Sections for navigation
-3. Check if `/product/design-system/colors.json` and `/product/design-system/typography.json` exist
+1. Прочитайте `/product/product-overview.md` — Название и описание продукта
+2. Прочитайте `/product/product-roadmap.md` — Секции для навигации
+3. Проверьте, существуют ли `/product/design-system/colors.json` и `/product/design-system/typography.json`
 
-If overview or roadmap are missing:
+Если обзор или дорожная карта отсутствуют:
 
-"Before designing the shell, you need to define your product and sections. Please run:
-1. `/product-vision` — Define your product
-2. `/product-roadmap` — Define your sections"
+"Перед проектированием оболочки вам нужно определить ваш продукт и секции. Пожалуйста, запустите:
+1. `/product-vision` — Определите ваш продукт
+2. `/product-roadmap` — Определите ваши секции"
 
-Stop here if overview or roadmap are missing.
+Остановитесь здесь, если обзор или дорожная карта отсутствуют.
 
-If design tokens are missing, show a warning but continue:
+Если токены дизайна отсутствуют, покажите предупреждение, но продолжайте:
 
-"Note: Design tokens haven't been defined yet. I'll proceed with default styling, but you may want to run `/design-tokens` first for consistent colors and typography."
+"Примечание: Токены дизайна еще не определены. Я продолжу со стилями по умолчанию, но вы можете сначала запустить `/design-tokens` для согласованных цветов и типографики."
 
 ## Step 2: Analyze Product Structure
 
-Review the roadmap sections and present navigation options:
+Просмотрите секции дорожной карты и представьте варианты навигации:
 
-"I'm designing the shell for **[Product Name]**. Based on your roadmap, you have [N] sections:
+"Я проектирую оболочку для **[Product Name]**. Основываясь на вашей дорожной карте, у вас есть [N] секций:
 
-1. **[Section 1]** — [Description]
-2. **[Section 2]** — [Description]
-3. **[Section 3]** — [Description]
+1. **[Section 1]** — [Описание]
+2. **[Section 2]** — [Описание]
+3. **[Section 3]** — [Описание]
 
-Let's decide on the shell layout. Common patterns:
+Давайте решим макет оболочки. Общие паттерны:
 
-**A. Sidebar Navigation** — Vertical nav on the left, content on the right
-   Best for: Apps with many sections, dashboard-style tools, admin panels
+**A. Боковая навигация** — Вертикальная навигация слева, контент справа
+   Лучше для: Приложений со многими секциями, инструментов в стиле дашборда, админ-панелей
 
-**B. Top Navigation** — Horizontal nav at top, content below
-   Best for: Simpler apps, marketing-style products, fewer sections
+**B. Верхняя навигация** — Горизонтальная навигация сверху, контент ниже
+   Лучше для: Более простых приложений, продуктов в маркетинговом стиле, меньшего количества секций
 
-**C. Minimal Header** — Just logo + user menu, sections accessed differently
-   Best for: Single-purpose tools, wizard-style flows
+**C. Минимальный заголовок** — Только логотип + меню пользователя, секции доступны по-другому
+   Лучше для: Инструментов с одной целью, потоков в стиле мастера
 
-Which pattern fits **[Product Name]** best?"
+Какой паттерн лучше всего подходит для **[Product Name]**?"
 
-Wait for their response.
+Дождитесь их ответа.
 
 ## Step 3: Gather Design Details
 
-Use AskUserQuestion to clarify:
+Используйте AskUserQuestion для уточнения:
 
-- "Where should the user menu (avatar, logout) appear?"
-- "Do you want the sidebar collapsible on mobile, or should it become a hamburger menu?"
-- "Any additional items in the navigation? (Settings, Help, etc.)"
-- "What should the 'home' or default view be when the app loads?"
+- "Где должно появляться меню пользователя (аватар, выход)?"
+- "Хотите ли вы, чтобы боковая панель сворачивалась на мобильных, или она должна стать меню-гамбургером?"
+- "Есть ли дополнительные элементы в навигации? (Настройки, Справка и т.д.)"
+- "Каким должно быть «главное» или представление по умолчанию при загрузке приложения?"
 
 ## Step 4: Present Shell Specification
 
-Once you understand their preferences:
+Как только вы поймете их предпочтения:
 
-"Here's the shell design for **[Product Name]**:
+"Вот дизайн оболочки для **[Product Name]**:
 
-**Layout Pattern:** [Sidebar/Top Nav/Minimal]
+**Паттерн макета:** [Sidebar/Top Nav/Minimal]
 
-**Navigation Structure:**
+**Структура навигации:**
 - [Nav Item 1] → [Section]
 - [Nav Item 2] → [Section]
 - [Nav Item 3] → [Section]
-- [Additional items like Settings, Help]
+- [Дополнительные элементы, такие как Настройки, Справка]
 
-**User Menu:**
-- Location: [Top right / Bottom of sidebar]
-- Contents: Avatar, user name, logout
+**Меню пользователя:**
+- Расположение: [Вверху справа / Внизу боковой панели]
+- Содержимое: Аватар, имя пользователя, выход
 
-**Responsive Behavior:**
-- Desktop: [How it looks]
-- Mobile: [How it adapts]
+**Адаптивное поведение:**
+- Настольный: [Как это выглядит]
+- Мобильный: [Как это адаптируется]
 
-Does this match what you had in mind?"
+Соответствует ли это тому, что вы имели в виду?"
 
-Iterate until approved.
+Итерируйте до одобрения.
 
 ## Step 5: Create the Shell Specification
 
-Create `/product/shell/spec.md`:
+Создайте `/product/shell/spec.md`:
 
 ```markdown
 # Application Shell Specification
 
 ## Overview
-[Description of the shell design and its purpose]
+[Описание дизайна оболочки и её назначения]
 
 ## Navigation Structure
 - [Nav Item 1] → [Section 1]
 - [Nav Item 2] → [Section 2]
 - [Nav Item 3] → [Section 3]
-- [Any additional nav items]
+- [Любые дополнительные элементы навигации]
 
 ## User Menu
-[Description of user menu location and contents]
+[Описание расположения и содержимого меню пользователя]
 
 ## Layout Pattern
-[Description of the layout — sidebar, top nav, etc.]
+[Описание макета — боковая панель, верхняя навигация и т.д.]
 
 ## Responsive Behavior
-- **Desktop:** [Behavior]
-- **Tablet:** [Behavior]
-- **Mobile:** [Behavior]
+- **Desktop:** [Поведение]
+- **Tablet:** [Поведение]
+- **Mobile:** [Поведение]
 
 ## Design Notes
-[Any additional design decisions or notes]
+[Любые дополнительные решения по дизайну или примечания]
 ```
 
 ## Step 6: Create Shell Components
 
-Create the shell components at `src/shell/components/`:
+Создайте компоненты оболочки в `src/shell/components/`:
 
 ### AppShell.tsx
-The main wrapper component that accepts children and provides the layout structure.
+Основной компонент-обертка, который принимает children и предоставляет структуру макета.
 
 ```tsx
 interface AppShellProps {
@@ -131,25 +131,25 @@ interface AppShellProps {
 ```
 
 ### MainNav.tsx
-The navigation component (sidebar or top nav based on the chosen pattern).
+Компонент навигации (боковая панель или верхняя навигация в зависимости от выбранного паттерна).
 
 ### UserMenu.tsx
-The user menu with avatar and dropdown.
+Меню пользователя с аватаром и выпадающим списком.
 
 ### index.ts
-Export all components.
+Экспорт всех компонентов.
 
-**Component Requirements:**
-- Use props for all data and callbacks (portable)
-- Apply design tokens if they exist (colors, fonts)
-- Support light and dark mode with `dark:` variants
-- Be mobile responsive
-- Use Tailwind CSS for styling
-- Use lucide-react for icons
+**Требования к компонентам:**
+- Используйте пропсы для всех данных и колбэков (портативно)
+- Применяйте токены дизайна, если они существуют (цвета, шрифты)
+- Поддерживайте светлый и темный режим с вариантами `dark:`
+- Будьте адаптивными для мобильных
+- Используйте Tailwind CSS для стилизации
+- Используйте lucide-react для иконок
 
 ## Step 7: Create Shell Preview
 
-Create `src/shell/ShellPreview.tsx` — a preview wrapper for viewing the shell in Design OS:
+Создайте `src/shell/ShellPreview.tsx` — обертку предпросмотра для просмотра оболочки в Design OS:
 
 ```tsx
 import data from '@/../product/sections/[first-section]/data.json' // if exists
@@ -187,52 +187,52 @@ export default function ShellPreview() {
 
 ## Step 8: Apply Design Tokens
 
-If design tokens exist, apply them to the shell components:
+Если токены дизайна существуют, примените их к компонентам оболочки:
 
-**Colors:**
-- Read `/product/design-system/colors.json`
-- Use primary color for active nav items, key accents
-- Use secondary color for hover states, subtle highlights
-- Use neutral color for backgrounds, borders, text
+**Цвета:**
+- Прочитайте `/product/design-system/colors.json`
+- Используйте основной цвет для активных элементов навигации, ключевых акцентов
+- Используйте вторичный цвет для состояний наведения, тонких выделений
+- Используйте нейтральный цвет для фонов, границ, текста
 
-**Typography:**
-- Read `/product/design-system/typography.json`
-- Apply heading font to nav items and titles
-- Apply body font to other text
-- Include Google Fonts import in the preview
+**Типографика:**
+- Прочитайте `/product/design-system/typography.json`
+- Примените шрифт заголовков к элементам навигации и заголовкам
+- Примените шрифт тела к остальному тексту
+- Включите импорт Google Fonts в предпросмотр
 
 ## Step 9: Confirm Completion
 
-Let the user know:
+Сообщите пользователю:
 
-"I've designed the application shell for **[Product Name]**:
+"Я спроектировал оболочку приложения для **[Product Name]**:
 
-**Created files:**
-- `/product/shell/spec.md` — Shell specification
-- `src/shell/components/AppShell.tsx` — Main shell wrapper
-- `src/shell/components/MainNav.tsx` — Navigation component
-- `src/shell/components/UserMenu.tsx` — User menu component
-- `src/shell/components/index.ts` — Component exports
-- `src/shell/ShellPreview.tsx` — Preview wrapper
+**Созданные файлы:**
+- `/product/shell/spec.md` — Спецификация оболочки
+- `src/shell/components/AppShell.tsx` — Основная обертка оболочки
+- `src/shell/components/MainNav.tsx` — Компонент навигации
+- `src/shell/components/UserMenu.tsx` — Компонент меню пользователя
+- `src/shell/components/index.ts` — Экспорты компонентов
+- `src/shell/ShellPreview.tsx` — Обертка предпросмотра
 
-**Shell features:**
-- [Layout pattern] layout
-- Navigation for all [N] sections
-- User menu with avatar and logout
-- Mobile responsive design
-- Light/dark mode support
+**Функции оболочки:**
+- Макет [Layout pattern]
+- Навигация для всех [N] секций
+- Меню пользователя с аватаром и выходом
+- Адаптивный дизайн для мобильных
+- Поддержка светлого/темного режима
 
-**Important:** Restart your dev server to see the changes.
+**Важно:** Перезапустите ваш dev server, чтобы увидеть изменения.
 
-When you design section screens with `/design-screen`, they will render inside this shell, showing the full app experience.
+Когда вы проектируете экраны секций с `/design-screen`, они будут отображаться внутри этой оболочки, показывая полный опыт приложения.
 
-Next: Run `/shape-section` to start designing your first section."
+Далее: Запустите `/shape-section` для начала проектирования вашей первой секции."
 
 ## Important Notes
 
-- The shell is a screen design — it demonstrates the navigation and layout design
-- Components are props-based and portable to the user's codebase
-- The preview wrapper is for Design OS only — not exported
-- Apply design tokens when available for consistent styling
-- Keep the shell focused on navigation chrome — no authentication UI
-- Section screen designs will render inside the shell's content area
+- Оболочка — это дизайн экрана — она демонстрирует дизайн навигации и макета
+- Компоненты на основе пропсов и портативны в кодовую базу пользователя
+- Обертка предпросмотра только для Design OS — не экспортируется
+- Применяйте токены дизайна, когда доступны, для согласованной стилизации
+- Держите оболочку сфокусированной на навигационном хроме — без UI аутентификации
+- Дизайны экранов секций будут отображаться внутри области контента оболочки
